@@ -1,24 +1,24 @@
 <template>
     <footer class="footer center">
         <div class="footer__left">
-            <a class="footer__left_logo" @click="setPageTag('index')" href="#index">
-                <img :src="logotype" alt="ikon_logo" height="55">
-                <h2 class="footer__left_logo-text">{{ nameFirma }}</h2>
-            </a>
+            <router-link class="footer__left_logo" to="./">
+                <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
+                <h2 class="footer__left_logo-text">{{ infoLogo.nameFirma }}</h2>
+            </router-link>
             <h2 class="footer__heading footer__heading-color">Заказ торта в Тюмени</h2>
             <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi quod
                 est voluptas ducimus aliquid tempora aperiam quidem illum voluptatum!</p>
         </div>
         <div class="footer__center">
             <h2 class="footer__heading">Контакты</h2>
-            <p class="footer__text">{{ confectionersEmail }}</p>
-            <p class="footer__text">{{ confectionersPhone }}</p>
-            <p class="footer__text">{{ confectionersName }}</p>
+            <p class="footer__text">{{ infoLogo.confectionersEmail }}</p>
+            <p class="footer__text">{{ infoLogo.confectionersPhone }}</p>
+            <p class="footer__text">{{ infoLogo.confectionersName }}</p>
         </div>
         <div class="footer__right">
             <h2 class="footer__heading">Соц.сети</h2>
             <div class="footer__right_icon">
-                <a class="footer__right_icon_a" href="#">
+                <a :href="infoLogo.linkVk" class="footer__right_icon_a">
                     <svg viewBox="0 0 176 176" xmlns="http://www.w3.org/2000/svg">
                         <g id="Layer_2" data-name="Layer 2">
                             <g id="_19.vk" data-name="19.vk">
@@ -27,9 +27,8 @@
                                 </path>
                             </g>
                         </g>
-                    </svg>
-                </a>
-                <a class="footer__right_icon_a" href="#">
+                    </svg></a>
+                <a :href="infoLogo.linkInstagram" class="footer__right_icon_a">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 176">
                         <g id="Layer_2" data-name="Layer 2">
                             <g id="_05.instagram" data-name="05.instagram">
@@ -50,25 +49,16 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'FooterComponent',
-    data() {
-        return {
-            confectionersPhone: "+7-929-265-44-96",
-            confectionersName: "Иванова Юлия",
-            confectionersEmail: "mail@mail.com",
-            logotype: require('@/assets/img/logo_cupcake.svg'),
-            nameFirma: "Glaze.tmn",
-        }
+    computed: {
+        ...mapState(['infoLogo'])
     },
-    props: {
-        storageData: Object
-    },
-    methods: {
-        setPageTag(pageTag) {
-            this.storageData.currentPage = "" + pageTag;
-        }
-    },
+    // props: {
+    //     storageData: Object
+    // },
 }
 </script>
 

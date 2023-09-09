@@ -17,26 +17,10 @@
                 <div class="burger-menu__item" v-for="item in burgerMenu" :key="item">
                     <router-link class="burger-menu__title" :to="item.link">{{ item.name }}</router-link>
                     <ul class="burger-menu__list" v-if="item.li">
-                        <li v-for="el in item.li" :key="el"><router-link class="burger-menu__link" :to="el.urlLi">{{ el.nameLi }}</router-link></li>
+                        <li v-for="el in item.li" :key="el"><router-link class="burger-menu__link" :to="el.urlLi">{{
+                            el.nameLi }}</router-link></li>
                     </ul>
                 </div>
-                <!-- <div class="burger-menu__item">
-                    <a href="catalog.html" class="burger-menu__title">Торты</a>
-                    <ul class="burger-menu__list">
-                        <li><a class="burger-menu__link" href="#" @click="setPageTag('productList')">Начинки</a></li>
-                        <li><a class="burger-menu__link" href="#">Свабедные торты</a></li>
-                        <li><a class="burger-menu__link" href="#">Оформление</a></li>
-                    </ul>
-                </div>
-                <div class="burger-menu__item">
-                    <a href="catalog.html" class="burger-menu__title">Капкейки</a>
-                </div>
-                <div class="burger-menu__item">
-                    <a href="catalog.html" class="burger-menu__title">Трайфлы</a>
-                </div>
-                <div class="burger-menu__item">
-                    <a href="#" class="burger-menu__title">Эскимо / кейк-попс</a>
-                </div> -->
             </div>
         </div>
     </header>

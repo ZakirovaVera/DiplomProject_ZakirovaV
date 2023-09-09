@@ -5,6 +5,11 @@ export default createStore({
     infoLogo: {
       logotype: require('@/assets/img/logo_cupcake.svg'),
       nameFirma: "Glaze.tmn",
+      confectionersPhone: "+7-929-265-44-96",
+      confectionersName: "Иванова Юлия",
+      confectionersEmail: "mail@mail.com",
+      linkInstagram:'https://www.instagram.com/p/CvrXmMrrCPj/?igshid=MzRlODBiNWFlZA==',
+      linkVk:'https://vk.com/public211288485'
     },
     menulinks: [
       {
