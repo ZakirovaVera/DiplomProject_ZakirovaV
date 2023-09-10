@@ -1,14 +1,16 @@
 <template>
-<HeaderComponent/>
-<router-view></router-view>
-<FooterComponent/>
+  <div class="box-site">
+    <HeaderComponent />
+    <router-view></router-view>
+    <FooterComponent />
+  </div>
 </template>
 
 <script>
 import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 export default {
-    components: { HeaderComponent, FooterComponent }
+  components: { HeaderComponent, FooterComponent }
 }
 </script>
 
