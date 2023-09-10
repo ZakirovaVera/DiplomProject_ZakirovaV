@@ -9,7 +9,12 @@
                 <p class="promo__text">Я рада приветствовать вас на своем сайте. Вы можете ознакомиться с ассортиментом для
                     заказа тортов из качественных ингредиентов с доставкой: индивидуальные торты, для семейного вечера, дня
                     рождения, свадьбы и других событий.</p>
-                <P class="promo__text">Ваш кондитер, {{ infoLogo.confectionersName }}.</P>
+                <p class="promo__text">Ваш кондитер, {{ infoLogo.confectionersName }}.</p>
+                <router-link class="promo__btn" to="/about"><span>Обо мне</span>
+                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.85938 8.43542L15.5826 8.29857M10.4776 1.91138L17.0005 8.43436L10.3461 15.0887"
+                        stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+                </svg></router-link>
             </div>
         </div>
     </section>
@@ -89,10 +94,11 @@ export default {
         align-items: center;
     }
 
-    // &__info {
-    //     border-left: 12px solid $colorSelectSite;
-    //     padding-left: 16px;
-    // }
+    &__info {
+        align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    }
 
     &__title {
         font-style: normal;
@@ -111,6 +117,35 @@ export default {
         color: $colorFont;
         padding-bottom: 16px;
         text-align: justify
+    }
+    &__btn {
+        margin-top: 20px;
+        border-radius: 18px;
+        background: $colorFont;
+        box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+        display: flex;
+        padding: 26px 54px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: $colorBurgerMenu;
+        text-align: center;
+        font-family: Jost;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+        letter-spacing: 0.36px;
+
+        &:hover {
+            background: $colorSelectSite;
+            color: $colorBackground;
+
+            & svg path {
+                stroke: $colorBackground;
+            }
+        }
     }
 }
 .products-popular{

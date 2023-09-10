@@ -137,7 +137,7 @@ export default createStore({
         img: require('@/assets/img/chocolate_berry.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
         price: 1000,
-        popularity: 9,
+        popularity: 10,
       },
       {
         name: "Ягодный клубника-малина",
