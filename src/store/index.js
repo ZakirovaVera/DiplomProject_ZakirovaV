@@ -9,7 +9,8 @@ export default createStore({
       confectionersName: "Иванова Юлия",
       confectionersEmail: "mail@mail.com",
       linkInstagram: 'https://www.instagram.com/p/CvrXmMrrCPj/?igshid=MzRlODBiNWFlZA==',
-      linkVk: 'https://vk.com/public211288485'
+      linkVk: 'https://vk.com/public211288485',
+      diplom: [require('@/assets/img/diplom3.jpg'),require('@/assets/img/diplom1.jpg'),require('@/assets/img/diplom2.jpg')]
     },
     menulinks: [
       {
