@@ -121,7 +121,7 @@ export default {
     &__btn {
         margin-top: 20px;
         border-radius: 18px;
-        background: $colorFont;
+        background: $colorBackground;
         box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
         display: flex;
         padding: 26px 54px;

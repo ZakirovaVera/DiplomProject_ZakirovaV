@@ -16,21 +16,23 @@
                     magni facere, ea aspernatur aut exercitationem facilis voluptate quis nobis.</p>
             </div>
         </div>
-        <div class="about-me__diplom">
-            <h2 class="about-me__heading heading-center">Мои дипломы образования</h2>
-            <swiper :cssMode="true" :navigation="true" :pagination="true" :mousewheel="true" :keyboard="true"
-                :modules="modules" class="mySwiper">
-                <swiper-slide v-for="item in infoLogo.diplom" :key="index">
-                    <div>
-                        <img :src="item" alt="diplom"></div>
-                </swiper-slide>
-            </swiper>
 
-            <!-- <div class="about-me__diplom__item" v-for="item in infoLogo.diplom" :key="index">
+    </section>
+    <div class="about-me__diplom center">
+        <h2 class="about-me__heading heading-center">Мои дипломы образования</h2>
+        <swiper :cssMode="true" :navigation="true" :pagination="true" :mousewheel="true" :keyboard="true" :modules="modules"
+            class="mySwiper">
+            <swiper-slide v-for="item in infoLogo.diplom" :key="index">
+                <div>
+                    <img :src="item" alt="diplom">
+                </div>
+            </swiper-slide>
+        </swiper>
+
+        <!-- <div class="about-me__diplom__item" v-for="item in infoLogo.diplom" :key="index">
             <img :src="item" alt="diplom">
             </div>-->
-        </div>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -94,9 +96,13 @@ export default {
 
 .heading-center {
     text-align: center;
+    padding-top: 40px;
 }
 
 .about-me {
+    background: #fff3f5;
+    padding-top: 40px;
+
     &__banner {
         display: flex;
         flex-direction: row;
