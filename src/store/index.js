@@ -8,8 +8,8 @@ export default createStore({
       confectionersPhone: "+7-929-265-44-96",
       confectionersName: "Иванова Юлия",
       confectionersEmail: "mail@mail.com",
-      linkInstagram:'https://www.instagram.com/p/CvrXmMrrCPj/?igshid=MzRlODBiNWFlZA==',
-      linkVk:'https://vk.com/public211288485'
+      linkInstagram: 'https://www.instagram.com/p/CvrXmMrrCPj/?igshid=MzRlODBiNWFlZA==',
+      linkVk: 'https://vk.com/public211288485'
     },
     menulinks: [
       {
@@ -73,9 +73,67 @@ export default createStore({
         name: 'Эскимо / кейк-попс',
         link: '/popsicle',
       },
+    ],
+    promoPhoto: require('@/assets/img/promo_photo.jpg'),
+    listFillings: [
+      {
+        name: "Красный бархат",
+        img: require('@/assets/img/red_velvet2.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: 1000,
+        popularity: 10,
+      },
+      {
+        name: "Сникерс",
+        img: require('@/assets/img/snickers.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: 1000,
+        popularity: 8,
+      },
+      {
+        name: "Малина",
+        img: require('@/assets/img/description-raspberries.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: 1000,
+        popularity: 7,
+      },
+      {
+        name: "Вишня",
+        img: require('@/assets/img/description-cherry.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: 1000,
+        popularity: 6,
+      },
+      {
+        name: "Клубника",
+        img: require('@/assets/img/description-strawberry.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: 1000,
+        popularity: 5,
+      },
+      {
+        name: "Клубника",
+        img: require('@/assets/img/description-strawberry.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: 1000,
+        popularity: 4,
+      },
+      {
+        name: "Клубника",
+        img: require('@/assets/img/description-strawberry.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: 1000,
+        popularity: 9,
+      }
     ]
   },
   getters: {
+    getTop3(state) {
+      return state.listFillings
+        .sort((x, y) => y.popularity - x.popularity)
+        .slice(0, 3);
+    },
+
   },
   mutations: {
   },
