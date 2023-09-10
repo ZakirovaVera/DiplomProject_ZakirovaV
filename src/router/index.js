@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage.vue'
 import AboutMePage from '@/pages/AboutMePage.vue'
 import ContactPage from '@/pages/ContactPage.vue'
 import NotFountPage from '@/pages/NotFountPage.vue'
+import CakeProductPage from '@/pages/CakeProductPage.vue'
 
 const routes = [
   {
@@ -20,7 +21,11 @@ const routes = [
     name: 'Contact',
     component: ContactPage
   },
-  
+  {
+    path: '/cake/:pageNumber?',
+    name: 'Cake',
+    component: CakeProductPage
+  },
   {
     path: '/:CatchAll(.*)',
     name: '404',

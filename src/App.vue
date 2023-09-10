@@ -22,6 +22,7 @@ export default {
 
 body {
   font-family: 'Lato', sans-serif;
+  // background-color: aqua;
 }
 
 .center {
