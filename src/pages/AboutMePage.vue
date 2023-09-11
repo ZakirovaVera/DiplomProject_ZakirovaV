@@ -1,4 +1,5 @@
 <template>
+    <BannerComponent/>
     <section class="about-me center">
         <div class="about-me__banner">
             <div class="about-me__img-wrap">
@@ -28,10 +29,6 @@
                 </div>
             </swiper-slide>
         </swiper>
-
-        <!-- <div class="about-me__diplom__item" v-for="item in infoLogo.diplom" :key="index">
-            <img :src="item" alt="diplom">
-            </div>-->
     </div>
 </template>
 
@@ -49,17 +46,22 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
-
-
+import BannerComponent from '@/components/BannerComponent.vue';
 
 export default {
+    data() {
+        return {
+            title:"Обо мне"
+        }
+    },
     computed: {
         ...mapState(['imgAboutMe', 'infoLogo'])
     },
     components: {
-        Swiper,
-        SwiperSlide,
-    },
+    Swiper,
+    SwiperSlide,
+    BannerComponent
+},
     setup() {
         return {
             modules: [Navigation, Pagination, Mousewheel, Keyboard],
@@ -102,13 +104,13 @@ export default {
 .about-me {
     background: #fff3f5;
     padding-top: 40px;
+    padding-bottom: 40px;
 
     &__banner {
         display: flex;
         flex-direction: row;
         gap: 50px;
-        align-items: center;
-        padding: 30px 4px 30px;
+        align-items: flex-start;
     }
 
     &__img-wrap {

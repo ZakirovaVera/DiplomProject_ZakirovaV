@@ -1,4 +1,5 @@
 <template>
+    <BannerComponent/>
     <section class="product-content center">
         <div class="product-content-wrap">
             <h1 class="product-content__title">Начинки Тортов</h1>
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import BannerComponent from '@/components/BannerComponent.vue';
 import ProductComponent from '@/components/ProductComponent.vue';
 import { mapState } from 'vuex';
 
@@ -27,8 +29,9 @@ export default {
         }
     },
     components: {
-        ProductComponent,
-    },
+    ProductComponent,
+    BannerComponent
+},
     computed: {
         ...mapState(['listFillings']),
         totalPages() {

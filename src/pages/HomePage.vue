@@ -165,7 +165,7 @@ export default {
 }
 .product-popular-box{
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, 320px);
     gap: 40px;
     justify-content: center;
 }

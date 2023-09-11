@@ -24,7 +24,7 @@ export default {
 
 body {
   font-family: 'Lato', sans-serif;
-  // background-color: aqua;
+  background-color: #FFFFFF;
 }
 
 .center {
@@ -40,8 +40,21 @@ a {
   text-decoration: none;
 }
 
-.box-site {
-  overflow: hidden;
-  position: relative;
+// .box-site {
+//   overflow: hidden;
+//   position: relative;
+// }
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: $colorSelectSite;
+}
+
+html:root {
+  --swiper-theme-color: #ff839b;
 }
 </style>

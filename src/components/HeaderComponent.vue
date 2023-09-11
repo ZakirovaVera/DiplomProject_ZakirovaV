@@ -1,12 +1,12 @@
 <template>
-    <header class="header center">
+    <header class="header sticky  center">
         <div class="header__left">
             <router-link class="header__left_logo" to="./">
                 <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
                 <h2 class="header__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
         </div>
-        <nav class="header__right">
+        <nav class="header__right ">
             <router-link :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title }}</router-link>
             <label for="burger">Каталог
             </label>
@@ -40,11 +40,10 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/vars";
 
-.box-site {
-    overflow: hidden;
-    position: relative;
+.sticky{
+    position: sticky;
+    top: 0;
 }
-
 .header {
     min-height: 75px;
     background: $colorBackground;
@@ -54,7 +53,6 @@ export default {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s;
-    // position: relative;
 
     &__left {
         padding-left: 1rem;
@@ -78,6 +76,8 @@ export default {
     }
 
     &__right {
+        overflow: hidden;
+        position: relative;
         display: flex;
         align-items: center;
         gap: 33px;

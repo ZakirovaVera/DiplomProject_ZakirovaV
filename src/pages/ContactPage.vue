@@ -1,13 +1,13 @@
 <template>
-    <div>
-Контакты
-    </div>
+    <BannerComponent/>
 </template>
 
 <script>
+import BannerComponent from '@/components/BannerComponent.vue';
+
     export default {
-        
-    }
+    components: { BannerComponent }
+}
 </script>
 
 <style lang="scss" scoped>
