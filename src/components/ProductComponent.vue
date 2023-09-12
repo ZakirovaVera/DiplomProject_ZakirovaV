@@ -1,9 +1,6 @@
 <template>
     <div class="product">
         <img class="product__img product__img-big" :src="fil.img">
-        <!-- <div>
-            <img @click="selectCat(user)" v-for=" user in  users" :key="user" :src="user">
-        </div> -->
         <h2 class="product__title">{{ fil.name }}</h2>
         <p class="product__text product__text-price">{{ fil.price }} руб/кг</p>
         <p class="product__text">{{ fil.description }}</p>
@@ -21,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/vars";
+
 
 .product {
     display: flex;

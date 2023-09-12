@@ -32,18 +32,9 @@ body {
   padding-right: calc(50% - $siteWidth / 2);
 }
 
-// img {
-//   max-width: 100%;
-// }
-
 a {
   text-decoration: none;
 }
-
-// .box-site {
-//   overflow: hidden;
-//   position: relative;
-// }
 
 .swiper-wrapper {
   align-items: center;

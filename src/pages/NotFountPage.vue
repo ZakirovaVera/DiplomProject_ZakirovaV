@@ -73,7 +73,7 @@ export default {
         justify-content: center;
         align-items: center;
         gap: 10px;
-        color: $colorBurgerMenu;
+        color: $colorFon;
         text-align: center;
         font-family: Jost;
         font-size: 18px;

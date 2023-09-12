@@ -22,7 +22,7 @@ const routes = [
     component: ContactPage
   },
   {
-    path: '/cake/:pageNumber?',
+    path: '/catalog/:pageNumber?',
     name: 'Cake',
     component: CakeProductPage
   },
