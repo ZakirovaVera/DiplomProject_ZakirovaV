@@ -1,18 +1,18 @@
 <template>
     <BannerComponent />
-    <section class="product-content center">
-        <div>
-            <h1 class="product-content__title" v-if="!currentTag || isListFillings">Каталог</h1>
-            <h1 class="product-content__title" v-else>{{ currentTag }}</h1>
-            <h1>Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h1>
-            <p>Минимальный вес торта для заказа - 2 кг, шаг 500 грамм</p>
-            <p>Стоимость оформения оплачивается отдельно.</p>
-            <p>Покрытие велюр + 500₽.</p>
-            <p>Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка. 1700 кг.</p>
-            <p>Мини тортики минимальный заказ 6 шт вес 1,5 кг.</p>
-            <p>Птичье молоко 1500 кг - вес примерно 1.2-1.3 + оформление</p>
 
-        </div>
+    <div class="product-text-box center">
+        <h1 class="product-text__title" v-if="!currentTag || isListFillings">Каталог</h1>
+        <h1 class="product-text__title" v-else>{{ currentTag }}</h1>
+        <h2 class="product-text__subtitle">Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h2>
+        <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм</p>
+        <p class="product-text__text">Стоимость оформения оплачивается отдельно.</p>
+        <p class="product-text__text">Покрытие велюр + 500₽.</p>
+        <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка. 1700 кг.</p>
+        <p class="product-text__text">Мини тортики минимальный заказ 6 шт вес 1,5 кг.</p>
+        <p class="product-text__text">Птичье молоко 1500 кг - вес примерно 1.2-1.3 + оформление</p>
+    </div>
+    <section class="product-content center">
         <div class="product__sidebar">
             <div class="product__sidebar__btn-wrap">
                 <button class="product__sidebar__btn" @click="getListFillings">Вся
@@ -23,12 +23,10 @@
             </div>
         </div>
         <div class="product-content-wrap">
-
             <div class="product__products">
-                <ProductComponent v-for="filling in currentContents" :key="filling.id" :fil="filling" />
+                <ProductComponent v-for="filling in paginatedProducts" :key="filling.id" :fil="filling" />
             </div>
         </div>
-
         <div v-if="totalPages > 1" class="pagination">
             <router-link v-for="pageNumber in totalPages" :key="pageNumber" :to="getPageLink(pageNumber)">
                 {{ pageNumber }}
@@ -46,7 +44,7 @@ export default {
     name: "CakeProductPage",
     data() {
         return {
-            itemsPerPage: 6,
+            itemsPerPage: 9,
             currentContents: [],
             currentTag: null,
             isListFillings: false,
@@ -59,16 +57,15 @@ export default {
     computed: {
         ...mapState(['listFillings']),
         ...mapGetters(['getTags']),
-        // ...mapActions(['filterArticles']),
 
         totalPages() {
-            return Math.ceil(this.listFillings.length / this.itemsPerPage);
+            return Math.ceil(this.currentContents.length / this.itemsPerPage);
         },
         paginatedProducts() {
             const pageNumber = this.getCurrentPageNumber();
             const startIndex = (pageNumber - 1) * this.itemsPerPage;
             const endIndex = startIndex + this.itemsPerPage;
-            return this.listFillings.slice(startIndex, endIndex);
+            return this.currentContents.slice(startIndex, endIndex);
         }
     },
     created() {
@@ -87,10 +84,12 @@ export default {
             this.currentTag = tag;
             this.currentContents = Object.values(this.listFillings).filter((el) => el.tag === tag);
             this.isListFillings = false;
+            this.$router.push(this.getPageLink(1))
         },
         getListFillings() {
             this.currentContents = this.listFillings;
             this.isListFillings = true;
+            this.$router.push(this.getPageLink(1))
         }
     },
 }
@@ -98,6 +97,45 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/vars";
+
+.product-text-box {
+    background: $colorPromo;}
+
+.product-text{
+    &__title {
+        padding-top: 30px;
+        color: $colorBackground;
+        text-align: center;
+        font-family: DM Serif Display;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 62.5px;
+        letter-spacing: 1px;
+        padding-bottom: 50px;
+    }
+
+    &__subtitle {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 38px;
+        color: $colorFont;
+        padding-bottom: 16px;
+        text-align: justify;
+    }
+
+    &__text {
+        color: #4D5053;
+        font-family: Jost;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 33px;
+        letter-spacing: 0.22px;
+        padding-bottom: 4px;
+    }
+}
 
 .pagination {
     margin-top: 20px;
@@ -128,17 +166,7 @@ export default {
         min-height: 1720px;
     }
 
-    &__title {
-        color: $colorSelectSite;
-        text-align: center;
-        font-family: DM Serif Display;
-        font-size: 50px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 62.5px;
-        letter-spacing: 1px;
-        padding-bottom: 50px;
-    }
+
 }
 
 .product__sidebar {
