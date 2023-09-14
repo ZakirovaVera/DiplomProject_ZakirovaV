@@ -42,7 +42,7 @@ a {
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  color: $colorSelectSite;
+  color: $colorSite;
 }
 
 html:root {

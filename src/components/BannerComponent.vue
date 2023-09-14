@@ -4,9 +4,7 @@
 </template>
 
 <script>
-
 export default {
-
 }
 </script>
 
@@ -14,7 +12,6 @@ export default {
 @import "@/assets/_vars.scss";
 
 .banner {
-    // background: url(<path-to-image>), lightgray 50% / cover no-repeat;
     background-image: url(@/assets/img/banner2.jpg);
     background-size: cover;
     background-position: center;
@@ -22,6 +19,5 @@ export default {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-
 }
 </style>

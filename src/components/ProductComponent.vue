@@ -1,7 +1,8 @@
 <template>
     <div class="product">
         <img class="product__img product__img-big" :src="fil.img">
-        <h2 class="product__title">{{ fil.name }}</h2>
+        <a class="product__title" href="/catalog">{{ fil.name }}</a>
+        <!-- <h2 class="product__title">{{ fil.name }}</h2> -->
         <p class="product__text product__text-price">{{ fil.price }} руб/кг</p>
         <p class="product__text">{{ fil.description }}</p>
     </div>
@@ -24,6 +25,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    text-align: justify;
 
     &__img {
         height: 500px;
@@ -31,13 +33,16 @@ export default {
     }
 
     &__title {
-        color: $colorBackground;
+        color: $colorTextBlack;
         font-family: DM Serif Display;
         font-size: 25px;
         font-style: normal;
         font-weight: 700;
         line-height: 31.25px;
         letter-spacing: 0.5px;
+        &:hover{
+            color: $colorSite;
+        }
     }
 
     &__text {
@@ -53,7 +58,7 @@ export default {
 
     &__text-price {
         padding-bottom: 16px;
-        color: $colorSelectSite;
+        color: $colorSite;
         font-weight: 700;
     }
 }

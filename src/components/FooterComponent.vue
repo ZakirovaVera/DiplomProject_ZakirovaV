@@ -6,8 +6,7 @@
                 <h2 class="footer__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
             <h2 class="footer__heading footer__heading-color">Заказ торта в Тюмени</h2>
-            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi quod
-                est voluptas ducimus aliquid tempora aperiam quidem illum voluptatum!</p>
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi quod est voluptas ducimus aliquid tempora aperiam quidem illum voluptatum!</p>
         </div>
         <div class="footer__center">
             <h2 class="footer__heading">Контакты</h2>
@@ -27,7 +26,8 @@
                                 </path>
                             </g>
                         </g>
-                    </svg></a>
+                    </svg>
+                </a>
                 <a :href="infoLogo.linkInstagram" class="footer__right_icon_a">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 176">
                         <g id="Layer_2" data-name="Layer 2">
@@ -56,9 +56,6 @@ export default {
     computed: {
         ...mapState(['infoLogo'])
     },
-    // props: {
-    //     storageData: Object
-    // },
 }
 </script>
 
@@ -70,7 +67,7 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
     justify-items: center;
-    background: $colorBackground;
+    background: $colorHeaderFooter;
     padding-top: 80px;
     padding-bottom: 104px;
 
@@ -85,7 +82,7 @@ export default {
             padding-left: 4px;
 
             &-text {
-                color: $colorSelectSite;
+                color: $colorSite;
                 font-size: 40px;
                 font-weight: 400;
                 line-height: 50px;
@@ -118,14 +115,14 @@ export default {
                 width: 40px;
 
                 &:hover {
-                    fill: $colorSelectSite;
+                    fill: $colorSite;
                 }
             }
         }
     }
 
     &__heading {
-        color: $colorSelectSite;
+        color: $colorSite;
         font-size: 25px;
         font-family: DM Serif Display;
         font-weight: 400;

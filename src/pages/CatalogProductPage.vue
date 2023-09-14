@@ -5,12 +5,12 @@
         <h1 class="product-text__title" v-if="!currentTag || isListFillings">Каталог</h1>
         <h1 class="product-text__title" v-else>{{ currentTag }}</h1>
         <h2 class="product-text__subtitle">Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h2>
-        <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм</p>
+        <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм.</p>
         <p class="product-text__text">Стоимость оформения оплачивается отдельно.</p>
         <p class="product-text__text">Покрытие велюр + 500₽.</p>
-        <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка. 1700 кг.</p>
-        <p class="product-text__text">Мини тортики минимальный заказ 6 шт вес 1,5 кг.</p>
-        <p class="product-text__text">Птичье молоко 1500 кг - вес примерно 1.2-1.3 + оформление</p>
+        <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
+        <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
+        <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
     </div>
     <section class="product-content center">
         <div class="product__sidebar">
@@ -41,7 +41,7 @@ import ProductComponent from '@/components/ProductComponent.vue';
 import { mapState, mapGetters } from 'vuex';
 
 export default {
-    name: "CakeProductPage",
+    name: "CatalogProductPage",
     data() {
         return {
             itemsPerPage: 9,
@@ -99,18 +99,19 @@ export default {
 @import "@/assets/vars";
 
 .product-text-box {
-    background: $colorPromo;}
+    background: $colorPromo;
+}
 
-.product-text{
+.product-text {
     &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 58px;
         padding-top: 30px;
-        color: $colorBackground;
+        color: $colorTextBlack;
         text-align: center;
         font-family: DM Serif Display;
-        font-size: 50px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 62.5px;
         letter-spacing: 1px;
         padding-bottom: 50px;
     }
@@ -120,7 +121,7 @@ export default {
         font-weight: 400;
         font-size: 32px;
         line-height: 38px;
-        color: $colorFont;
+        color: $colorTextBlack;
         padding-bottom: 16px;
         text-align: justify;
     }
@@ -154,7 +155,7 @@ export default {
         padding-bottom: 24px;
 
         &:hover {
-            color: $colorSelectSite;
+            color: $colorSite;
         }
     }
 }
@@ -184,7 +185,7 @@ export default {
     }
 
     &__btn {
-        background-color: #222222;
+        background-color: $colorHeaderFooter;
         color: #ffffff;
         text-align: center;
         font-family: Jost;
@@ -203,7 +204,7 @@ export default {
         //     color: #FFF;
         // }
         &:hover {
-            background-color: $colorSelectSite;
+            background-color: $colorSite;
             color: $colorFon;
         }
     }

@@ -32,7 +32,7 @@ export default {
 }
 .header {
     min-height: 75px;
-    background: $colorBackground;
+    background: $colorHeaderFooter;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -51,7 +51,7 @@ export default {
             padding-left: 4px;
 
             &-text {
-                color: $colorSelectSite;
+                color: $colorSite;
                 font-size: 40px;
                 font-weight: 400;
                 line-height: 50px;
@@ -80,13 +80,13 @@ export default {
             font-weight: 400;
 
             &:hover {
-                color: $colorSelectSite;
+                color: $colorSite;
             }
         }
     }
 
     & svg:hover path {
-        fill: $colorSelectSite;
+        fill: $colorSite;
     }
 }
 </style>

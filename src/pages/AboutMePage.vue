@@ -81,7 +81,7 @@ export default {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: $colorFon;
 
     /* Center slide text vertically */
     display: flex;
@@ -102,7 +102,7 @@ export default {
 }
 
 .about-me {
-    background: #fff3f5;
+    background: $colorPromo;
     padding-top: 40px;
     padding-bottom: 40px;
 
@@ -127,7 +127,7 @@ export default {
         font-weight: 700;
         font-size: 48px;
         line-height: 58px;
-        color: $colorBackground;
+        color: $colorTextBlack;
         padding-bottom: 28px;
     }
 

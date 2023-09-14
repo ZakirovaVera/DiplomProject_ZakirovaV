@@ -41,7 +41,7 @@ export default {
     }
 
     &__title {
-        color: $colorSelectSite;
+        color: $colorSite;
         font-family: DM Serif Display;
         font-size: 250px;
         font-style: normal;
@@ -65,7 +65,7 @@ export default {
 
     &__btn {
         border-radius: 18px;
-        background: $colorBackground;
+        background: $colorHeaderFooter;
         box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
         display: flex;
         padding: 26px 54px;
@@ -83,11 +83,11 @@ export default {
         letter-spacing: 0.36px;
 
         &:hover {
-            background: $colorSelectSite;
-            color: $colorBackground;
+            background: $colorSite;
+            color: $colorHeaderFooter;
 
             & svg path {
-                stroke: $colorBackground;
+                stroke: $colorHeaderFooter;
             }
         }
     }

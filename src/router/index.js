@@ -3,7 +3,7 @@ import HomePage from '@/pages/HomePage.vue'
 import AboutMePage from '@/pages/AboutMePage.vue'
 import ContactPage from '@/pages/ContactPage.vue'
 import NotFountPage from '@/pages/NotFountPage.vue'
-import CakeProductPage from '@/pages/CakeProductPage.vue'
+import CatalogProductPage from '@/pages/CatalogProductPage.vue'
 
 const routes = [
   {
@@ -23,8 +23,8 @@ const routes = [
   },
   {
     path: '/catalog/:pageNumber?',
-    name: 'Cake',
-    component: CakeProductPage
+    name: 'Catalog',
+    component: CatalogProductPage
   },
   {
     path: '/:CatchAll(.*)',

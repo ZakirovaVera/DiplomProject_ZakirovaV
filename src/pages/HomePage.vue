@@ -107,7 +107,7 @@ export default {
         font-weight: 700;
         font-size: 48px;
         line-height: 58px;
-        color: $colorBackground;
+        color: $colorTextBlack;
         padding-bottom: 28px;
     }
 
@@ -123,7 +123,7 @@ export default {
     &__btn {
         margin-top: 20px;
         border-radius: 18px;
-        background: $colorBackground;
+        background: $colorHeaderFooter;
         box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
         display: flex;
         padding: 26px 54px;
@@ -141,11 +141,11 @@ export default {
         letter-spacing: 0.36px;
 
         &:hover {
-            background: $colorSelectSite;
-            color: $colorBackground;
+            background: $colorSite;
+            color: $colorHeaderFooter;
 
             & svg path {
-                stroke: $colorBackground;
+                stroke: $colorHeaderFooter;
             }
         }
     }
@@ -155,7 +155,7 @@ export default {
     padding-bottom: 96px;
 }
 .products__heading{
-    color: $colorSelectSite;
+    color: $colorSite;
     text-align: center;
     font-family: DM Serif Display;
     font-size: 50px;
@@ -179,7 +179,7 @@ export default {
     &__heading {
         text-align: center;
         padding-bottom: 24px;
-        color: $colorSelectSite;
+        color: $colorSite;
         font-family: DM Serif Display;
         font-size: 50px;
         font-style: normal;
