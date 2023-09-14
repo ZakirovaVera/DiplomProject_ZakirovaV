@@ -47,5 +47,6 @@ a {
 
 html:root {
   --swiper-theme-color: #ff839b;
+  --swiper-pagination-fraction-color: #ff839b;
 }
 </style>

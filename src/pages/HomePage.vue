@@ -11,10 +11,10 @@
                     рождения, свадьбы и других событий.</p>
                 <p class="promo__text">Ваш кондитер, {{ infoLogo.confectionersName }}.</p>
                 <router-link class="promo__btn" to="/about"><span>Обо мне</span>
-                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.85938 8.43542L15.5826 8.29857M10.4776 1.91138L17.0005 8.43436L10.3461 15.0887"
-                        stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
-                </svg></router-link>
+                    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.85938 8.43542L15.5826 8.29857M10.4776 1.91138L17.0005 8.43436L10.3461 15.0887"
+                            stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+                    </svg></router-link>
             </div>
         </div>
     </section>
@@ -51,20 +51,59 @@
             </article>
         </div>
     </section>
+    <div class="swiperReviews center">
+        <h2 class="swiperReviews__title">Отзывы</h2>
+        <swiper ref="{swiperRef}" :slidesPerView="3" :centeredSlides="true" :spaceBetween="30" :pagination="{
+            type: 'fraction',
+        }" :navigation="true" :modules="modules" class="mySwiper">
+            <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
+        </swiper>
+
+        <p class="append-buttons"></p>
+        <!-- <swiper :spaceBetween="30" :centeredSlides="true" :autoplay="{
+            delay: 2500,
+            disableOnInteraction: false,
+        }" :pagination="{
+    clickable: true,
+}" :navigation="true" :modules="modules" class="mySwiper">
+            <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
+        </swiper> -->
+    </div>
 </template>
 
 <script>
 import ProductComponent from '@/components/ProductComponent.vue';
 import { mapState, mapGetters } from 'vuex';
 
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import './style.css';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
 export default {
     name: "PromoComponent",
     components: {
         ProductComponent,
+        Swiper,
+        SwiperSlide,
     },
     computed: {
-        ...mapState(['infoLogo', 'promoPhoto', 'listFillings']),
+        ...mapState(['infoLogo', 'promoPhoto', 'listFillings', 'reviewsSwiper']),
         ...mapGetters(['getTop3'])
+    },
+    setup() {
+        return {
+            modules: [Pagination, Navigation],
+        };
     },
 }
 </script>
@@ -72,7 +111,61 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/vars";
 
+.swiperReviews {
+    &__title {
+        text-align: center;
+        color: $colorSite;
+        font-family: DM Serif Display;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 62.5px;
+        letter-spacing: 1px;
+        padding-top: 30px;
+    }
+}
 
+.swiper {
+    width: 100%;
+    height: 100%;
+
+    &-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+
+
+
+.append-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.append-buttons button {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #007aff;
+    color: #007aff;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 10px;
+    font-size: 13px;
+}
 
 .promo {
     display: flex;
@@ -98,8 +191,8 @@ export default {
 
     &__info {
         align-items: flex-start;
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
 
     &__title {
@@ -120,6 +213,7 @@ export default {
         padding-bottom: 16px;
         text-align: justify
     }
+
     &__btn {
         margin-top: 20px;
         border-radius: 18px;
@@ -150,11 +244,13 @@ export default {
         }
     }
 }
-.products-popular{
+
+.products-popular {
     padding-top: 60px;
     padding-bottom: 96px;
 }
-.products__heading{
+
+.products__heading {
     color: $colorSite;
     text-align: center;
     font-family: DM Serif Display;
@@ -165,12 +261,14 @@ export default {
     letter-spacing: 1px;
     padding-bottom: 50px;
 }
-.product-popular-box{
+
+.product-popular-box {
     display: grid;
     grid-template-columns: repeat(auto-fill, 320px);
     gap: 40px;
     justify-content: center;
 }
+
 .advantages {
     background: $colorPromo;
     padding-top: 60px;
@@ -178,7 +276,6 @@ export default {
 
     &__heading {
         text-align: center;
-        padding-bottom: 24px;
         color: $colorSite;
         font-family: DM Serif Display;
         font-size: 50px;

@@ -388,6 +388,9 @@ export default createStore({
       },
     ],
     imgAboutMe: require('@/assets/img/aboutMe.jpg'),
+    reviewsSwiper: [
+      require('@/assets/img/reviews1.jpg'), require('@/assets/img/reviews2.jpg'), require('@/assets/img/reviews3.jpg'), require('@/assets/img/reviews4.jpg'), require('@/assets/img/reviews5.jpg'), require('@/assets/img/reviews6.jpg'), require('@/assets/img/reviews7.jpg'), require('@/assets/img/reviews8.jpg'), require('@/assets/img/reviews9.jpg'), require('@/assets/img/reviews10.jpg'), require('@/assets/img/reviews11.jpg'), require('@/assets/img/reviews12.jpg'), require('@/assets/img/reviews13.jpg'), require('@/assets/img/reviews14.jpg'), require('@/assets/img/reviews15.jpg'), require('@/assets/img/reviews16.jpg'), require('@/assets/img/reviews17.jpg'), require('@/assets/img/reviews18.jpg'), require('@/assets/img/reviews19.jpg'), require('@/assets/img/reviews20.jpg'), require('@/assets/img/reviews21.jpg'), require('@/assets/img/reviews22.jpg'), require('@/assets/img/reviews23.jpg'), require('@/assets/img/reviews24.jpg'), require('@/assets/img/reviews25.jpg'), require('@/assets/img/reviews26.jpg'), require('@/assets/img/reviews27.jpg'), require('@/assets/img/reviews28.jpg'), require('@/assets/img/reviews29.jpg'), require('@/assets/img/reviews30.jpg'), require('@/assets/img/reviews31.jpg'), require('@/assets/img/reviews32.jpg'), require('@/assets/img/reviews33.jpg'), require('@/assets/img/reviews34.jpg'), require('@/assets/img/reviews35.jpg'), require('@/assets/img/reviews36.jpg'), require('@/assets/img/reviews37.jpg'), require('@/assets/img/reviews38.jpg'), require('@/assets/img/reviews39.jpg'), require('@/assets/img/reviews40.jpg'), require('@/assets/img/reviews41.jpg'), require('@/assets/img/reviews42.jpg'), require('@/assets/img/reviews43.jpg')
+    ]
   },
   getters: {
     getTop3(state) {
