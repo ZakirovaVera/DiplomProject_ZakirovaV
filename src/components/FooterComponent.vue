@@ -1,7 +1,7 @@
 <template>
     <footer class="footer center">
         <div class="footer__left">
-            <router-link class="footer__left_logo" to="./">
+            <router-link class="footer__left_logo" to="/">
                 <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
                 <h2 class="footer__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
