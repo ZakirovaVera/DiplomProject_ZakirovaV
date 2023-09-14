@@ -1,6 +1,5 @@
 <template>
     <BannerComponent />
-
     <div class="product-text-box center">
         <h1 class="product-text__title" v-if="!currentTag || isListFillings">Каталог</h1>
         <h1 class="product-text__title" v-else>{{ currentTag }}</h1>
@@ -138,7 +137,6 @@ export default {
         padding-bottom: 4px;
     }
 }
-
 .pagination {
     margin-top: 20px;
     text-align: center;
@@ -170,7 +168,6 @@ export default {
 
 
 }
-
 .product__sidebar {
     display: flex;
     flex-direction: column;
@@ -209,7 +206,6 @@ export default {
             color: $colorFon;
         }
     }
-
 }
 
 .product__products {

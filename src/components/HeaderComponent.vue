@@ -1,7 +1,7 @@
 <template>
     <header class="header sticky  center">
         <div class="header__left">
-            <router-link class="header__left_logo" to="./">
+            <router-link class="header__left_logo" to="/">
                 <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
                 <h2 class="header__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
@@ -29,6 +29,7 @@ export default {
 .sticky{
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 .header {
     min-height: 75px;

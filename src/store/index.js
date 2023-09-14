@@ -16,7 +16,7 @@ export default createStore({
       {
         id: 1,
         title: 'Главная',
-        url: './'
+        url: '/'
       },
       {
         id: 2,
