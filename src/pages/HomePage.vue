@@ -53,21 +53,11 @@
     </section>
     <div class="swiperReviews center">
         <h2 class="swiperReviews__title">Отзывы</h2>
-        <swiper ref="{swiperRef}" :slidesPerView="3" :centeredSlides="true" :spaceBetween="30" :pagination="{
-            type: 'fraction',
-        }" :navigation="true" :modules="modules" class="mySwiper">
+        <swiper :slidesPerView="3" :spaceBetween="30" :pagination="{
+            clickable: true,
+        }" :modules="modules" class="mySwiper">
             <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
         </swiper>
-
-        <p class="append-buttons"></p>
-        <!-- <swiper :spaceBetween="30" :centeredSlides="true" :autoplay="{
-            delay: 2500,
-            disableOnInteraction: false,
-        }" :pagination="{
-    clickable: true,
-}" :navigation="true" :modules="modules" class="mySwiper">
-            <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
-        </swiper> -->
     </div>
 </template>
 
@@ -75,19 +65,18 @@
 import ProductComponent from '@/components/ProductComponent.vue';
 import { mapState, mapGetters } from 'vuex';
 
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
 import 'swiper/css';
 
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
-// import './style.css';
+//   import './style.css';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+
 
 export default {
     name: "PromoComponent",
@@ -102,7 +91,7 @@ export default {
     },
     setup() {
         return {
-            modules: [Pagination, Navigation],
+            modules: [Pagination],
         };
     },
 }
@@ -112,6 +101,7 @@ export default {
 @import "@/assets/vars";
 
 .swiperReviews {
+    padding-bottom: 60px;
     &__title {
         text-align: center;
         color: $colorSite;
@@ -121,51 +111,33 @@ export default {
         font-weight: 700;
         line-height: 62.5px;
         letter-spacing: 1px;
-        padding-top: 30px;
+        padding-top: 40px;
     }
 }
 
 .swiper {
-    width: 100%;
-    height: 100%;
-
-    &-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        & img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
+  width: 100%;
+  height: 800px;
 }
 
-
-
-
-
-.append-buttons {
-    text-align: center;
-    margin-top: 20px;
+.swiper-slide {
+    height: 670px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.append-buttons button {
-    display: inline-block;
-    cursor: pointer;
-    border: 1px solid #007aff;
-    color: #007aff;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin: 0 10px;
-    font-size: 13px;
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 20px 20px;
 }
+
 
 .promo {
     display: flex;

@@ -1,6 +1,6 @@
 <template>
     <div class="product">
-        <img class="product__img product__img-big" :src="fil.img">
+        <img class="product__img" :src="fil.img">
         <a class="product__title" href="/catalog">{{ fil.name }}</a>
         <!-- <h2 class="product__title">{{ fil.name }}</h2> -->
         <p class="product__text product__text-price">{{ fil.price }} руб/кг</p>
@@ -30,6 +30,7 @@ export default {
     &__img {
         height: 500px;
         object-fit: cover;
+        border-radius: 20px 20px 20px 20px;
     }
 
     &__title {

@@ -100,6 +100,7 @@ export default {
 
 .product-text-box {
     background: $colorPromo;
+    padding-bottom: 20px;
 }
 
 .product-text {

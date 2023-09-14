@@ -386,6 +386,23 @@ export default createStore({
         price: 1000,
         popularity: 9,
       },
+      //Другое
+      {
+        name: "Фигурки",
+        tag: 'Другое',
+        img: require('@/assets/img/other1.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: null,
+        popularity: 7,
+      },
+      {
+        name: "Трубочки",
+        tag: 'Другое',
+        img: require('@/assets/img/other2.jpg'),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
+        price: null,
+        popularity: 6,
+      },
     ],
     imgAboutMe: require('@/assets/img/aboutMe.jpg'),
     reviewsSwiper: [
