@@ -1,10 +1,12 @@
 <template>
     <div class="product">
-        <img class="product__img" :src="fil.img">
-        <a class="product__title" href="/catalog">{{ fil.name }}</a>
-        <!-- <h2 class="product__title">{{ fil.name }}</h2> -->
-        <p class="product__text product__text-price">{{ fil.price }} руб/кг</p>
-        <p class="product__text">{{ fil.description }}</p>
+        <img class="product__img" :src="fil.img"><a class="product__title" href="/catalog">{{ fil.name }}</a>
+        <div>
+            
+            <!-- <h2 class="product__title">{{ fil.name }}</h2> -->
+            <p class="product__text product__text-price">{{ fil.price }} руб/кг</p>
+            <p class="product__text">{{ fil.description }}</p>
+        </div>
     </div>
 </template>
 
@@ -24,8 +26,7 @@ export default {
 .product {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    text-align: justify;
+    gap: 8px;
 
     &__img {
         height: 500px;
@@ -35,25 +36,26 @@ export default {
 
     &__title {
         color: $colorTextBlack;
-        font-family: DM Serif Display;
         font-size: 25px;
         font-style: normal;
         font-weight: 700;
         line-height: 31.25px;
         letter-spacing: 0.5px;
-        &:hover{
+        min-height: 60px;
+
+        &:hover {
             color: $colorSite;
         }
     }
 
     &__text {
         color: $colorFont;
-        font-family: Jost;
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
         line-height: 33px;
         letter-spacing: 0.22px;
+        text-align: justify;
         padding-bottom: 24px;
     }
 

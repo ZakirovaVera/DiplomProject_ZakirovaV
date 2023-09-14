@@ -87,7 +87,6 @@ export default {
                 font-weight: 400;
                 line-height: 50px;
                 word-wrap: break-word;
-                font-family: DM Serif Display;
                 text-align:justify
             }
         }

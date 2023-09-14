@@ -74,11 +74,12 @@ export default {
 @import "@/assets/vars";
 
 .swiper {
-    width: 100%;
+    width: 700px;
     height: 100%;
 }
 
 .swiper-slide {
+    // height: 850px;
     text-align: center;
     font-size: 18px;
     background: $colorFon;
@@ -118,8 +119,12 @@ export default {
     }
 
     &__img {
+        padding-left: 4px;
         height: 100%;
         border-radius: 0px 80px 0px 80px;
+    }
+    &__content{
+        padding-right: 4px;
     }
 
     &__heading {
@@ -132,7 +137,6 @@ export default {
     }
 
     &__text {
-        padding-bottom: 16px;
         font-style: normal;
         font-weight: 400;
         font-size: 32px;
@@ -143,6 +147,6 @@ export default {
     }
 
     &__diplom {
-        padding-bottom: 96px;
+        padding-bottom: 60px;
     }
 }</style>

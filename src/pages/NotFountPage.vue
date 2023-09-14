@@ -27,10 +27,7 @@ export default {
 .notfount {
     display: flex;
     gap: 80px;
-    // justify-content: space-between;
     align-items: center;
-    // padding-top: 24px;
-    // padding-bottom: 120px;
 
     &__content {
         display: flex;
@@ -42,22 +39,18 @@ export default {
 
     &__title {
         color: $colorSite;
-        font-family: DM Serif Display;
         font-size: 250px;
         font-style: normal;
         font-weight: 400;
         line-height: 125%;
-        /* 312.5px */
     }
 
     &__subtitle {
         color: $colorFont;
-        font-family: DM Serif Display;
         font-size: 35px;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
-        /* 52.5px */
         letter-spacing: 0.35px;
         padding-top: 16px;
         padding-bottom: 24px;
@@ -75,7 +68,6 @@ export default {
         gap: 10px;
         color: $colorFon;
         text-align: center;
-        font-family: Jost;
         font-size: 18px;
         font-style: normal;
         font-weight: 600;

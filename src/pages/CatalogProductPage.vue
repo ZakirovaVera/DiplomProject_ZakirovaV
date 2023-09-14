@@ -1,15 +1,17 @@
 <template>
     <BannerComponent />
-    <div class="product-text-box center">
-        <h1 class="product-text__title" v-if="!currentTag || isListFillings">Каталог</h1>
-        <h1 class="product-text__title" v-else>{{ currentTag }}</h1>
-        <h2 class="product-text__subtitle">Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h2>
-        <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм.</p>
-        <p class="product-text__text">Стоимость оформения оплачивается отдельно.</p>
-        <p class="product-text__text">Покрытие велюр + 500₽.</p>
-        <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
-        <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
-        <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
+    <div class="product-text center">
+        <div class="product-text-box">
+            <h1 class="product-text__title" v-if="!currentTag || isListFillings">Каталог</h1>
+            <h1 class="product-text__title" v-else>{{ currentTag }}</h1>
+            <h2 class="product-text__subtitle">Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h2>
+            <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм.</p>
+            <p class="product-text__text">Стоимость оформения оплачивается отдельно.</p>
+            <p class="product-text__text">Покрытие велюр + 500₽.</p>
+            <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
+            <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
+            <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
+        </div>
     </div>
     <section class="product-content center">
         <div class="product__sidebar">
@@ -98,22 +100,23 @@ export default {
 @import "@/assets/vars";
 
 .product-text-box {
-    background: $colorPromo;
-    padding-bottom: 20px;
+    padding: 0 4px 0;
 }
 
 .product-text {
+    background: $colorPromo;
+    padding-bottom: 20px;
+
     &__title {
         font-style: normal;
         font-weight: 700;
         font-size: 48px;
         line-height: 58px;
-        padding-top: 30px;
         color: $colorTextBlack;
         text-align: center;
-        font-family: DM Serif Display;
         letter-spacing: 1px;
-        padding-bottom: 50px;
+        padding-bottom: 20px;
+        padding-top: 30px;
     }
 
     &__subtitle {
@@ -128,7 +131,6 @@ export default {
 
     &__text {
         color: #4D5053;
-        font-family: Jost;
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -137,6 +139,7 @@ export default {
         padding-bottom: 4px;
     }
 }
+
 .pagination {
     margin-top: 20px;
     text-align: center;
@@ -145,7 +148,6 @@ export default {
         margin-right: 20px;
         cursor: pointer;
         color: #4D5053;
-        font-family: Jost;
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -165,9 +167,8 @@ export default {
     &-wrap {
         min-height: 1720px;
     }
-
-
 }
+
 .product__sidebar {
     display: flex;
     flex-direction: column;
@@ -184,7 +185,7 @@ export default {
 
     &__btn {
         background-color: $colorHeaderFooter;
-        color: #ffffff;
+        color: $colorFon;
         text-align: center;
         font-family: Jost;
         font-size: 18px;

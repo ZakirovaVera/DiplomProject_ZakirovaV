@@ -52,12 +52,14 @@
         </div>
     </section>
     <div class="swiperReviews center">
-        <h2 class="swiperReviews__title">Отзывы</h2>
+        <div class="swiperReviews-box">
+            <h2 class="swiperReviews__title">Отзывы</h2>
         <swiper :slidesPerView="3" :spaceBetween="30" :pagination="{
             clickable: true,
         }" :modules="modules" class="mySwiper">
             <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
         </swiper>
+        </div>
     </div>
 </template>
 
@@ -102,10 +104,13 @@ export default {
 
 .swiperReviews {
     padding-bottom: 60px;
+    &-box{
+        padding: 0 4px 0;
+    }
+
     &__title {
         text-align: center;
         color: $colorSite;
-        font-family: DM Serif Display;
         font-size: 50px;
         font-style: normal;
         font-weight: 700;
@@ -116,26 +121,26 @@ export default {
 }
 
 .swiper {
-  width: 100%;
-  height: 800px;
+    width: 100%;
+    height: 800px;
 }
 
 .swiper-slide {
     height: 670px;
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px 20px 20px 20px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 20px 20px;
 }
 
 
@@ -147,6 +152,7 @@ export default {
 
     &__img {
         width: 50%;
+        padding-left: 4px;
 
         & img {
             width: 450px;
@@ -159,6 +165,7 @@ export default {
         padding-left: 64px;
         display: flex;
         align-items: center;
+        padding-right: 4px;
     }
 
     &__info {
@@ -225,7 +232,6 @@ export default {
 .products__heading {
     color: $colorSite;
     text-align: center;
-    font-family: DM Serif Display;
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
@@ -249,7 +255,6 @@ export default {
     &__heading {
         text-align: center;
         color: $colorSite;
-        font-family: DM Serif Display;
         font-size: 50px;
         font-style: normal;
         font-weight: 700;
@@ -262,6 +267,7 @@ export default {
         grid-template-columns: repeat(2, 1fr);
         display: grid;
         gap: 40px;
+        padding: 0 4px 0;
     }
 
     &__item {
@@ -270,8 +276,7 @@ export default {
         &_title {
             color: $colorFont;
             text-align: center;
-            font-family: DM Serif Display;
-            font-size: 50px;
+            font-size: 40px;
             font-style: normal;
             font-weight: 400;
             line-height: 62.5px;
@@ -281,7 +286,6 @@ export default {
 
         &_text {
             color: $colorFont;
-            font-family: Jost;
             font-size: 22px;
             font-style: normal;
             font-weight: 400;

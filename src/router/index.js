@@ -16,11 +16,11 @@ const routes = [
     name: 'About',
     component: AboutMePage
   },
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: ContactPage
-  },
+  // {
+  //   path: '/contact',
+  //   name: 'Contact',
+  //   component: ContactPage
+  // },
   {
     path: '/catalog/:pageNumber?',
     name: 'Catalog',

@@ -23,7 +23,7 @@ export default {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Mulish', sans-serif;
   background-color: #FFFFFF;
 }
 
