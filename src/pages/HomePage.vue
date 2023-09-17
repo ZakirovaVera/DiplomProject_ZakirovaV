@@ -7,8 +7,10 @@
             <div class="promo__info">
                 <h3 class="promo__title">Добро пожаловать на сайт "{{ infoLogo.nameFirma }}"!</h3>
                 <p class="promo__text">Я рада приветствовать вас на своем сайте. Вы можете ознакомиться с ассортиментом для
-                    заказа тортов из качественных ингредиентов с доставкой: индивидуальные торты, для семейного вечера, дня
-                    рождения, свадьбы и других событий.</p>
+                    заказа тортов из качественных ингредиентов с доставкой:
+                    <br>
+                    Индивидуальные торты, для семейного вечера, дня рождения, свадьбы и других событий.
+                </p>
                 <p class="promo__text">Ваш кондитер, {{ infoLogo.confectionersName }}.</p>
                 <router-link class="promo__btn" to="/about"><span>Обо мне</span>
                     <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,11 +56,11 @@
     <div class="swiperReviews center">
         <div class="swiperReviews-box">
             <h2 class="swiperReviews__title">Отзывы</h2>
-        <swiper :slidesPerView="3" :spaceBetween="30" :pagination="{
-            clickable: true,
-        }" :modules="modules" class="mySwiper">
-            <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
-        </swiper>
+            <swiper :slidesPerView="3" :spaceBetween="30" :pagination="{
+                clickable: true,
+            }" :modules="modules" class="mySwiper">
+                <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
+            </swiper>
         </div>
     </div>
 </template>
@@ -104,7 +106,8 @@ export default {
 
 .swiperReviews {
     padding-bottom: 60px;
-    &-box{
+
+    &-box {
         padding: 0 4px 0;
     }
 
@@ -206,7 +209,6 @@ export default {
         gap: 10px;
         color: $colorFon;
         text-align: center;
-        font-family: Jost;
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -294,5 +296,4 @@ export default {
             text-align: justify;
         }
     }
-}
-</style>
+}</style>

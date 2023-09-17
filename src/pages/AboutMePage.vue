@@ -42,8 +42,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-//   import './style.css';
-
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import BannerComponent from '@/components/BannerComponent.vue';

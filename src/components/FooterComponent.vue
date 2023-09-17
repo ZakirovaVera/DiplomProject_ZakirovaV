@@ -123,7 +123,6 @@ export default {
     &__heading {
         color: $colorSite;
         font-size: 25px;
-        font-family: DM Serif Display;
         font-weight: 400;
         line-height: 31.25px;
         word-wrap: break-word;
@@ -137,7 +136,6 @@ export default {
 
     &__text {
         color: $colorWhite;
-        font-family: Jost;
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
