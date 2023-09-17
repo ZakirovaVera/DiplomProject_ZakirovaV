@@ -6,10 +6,9 @@
         <div class="promo__slogan">
             <div class="promo__info">
                 <h3 class="promo__title">Добро пожаловать на сайт "{{ infoLogo.nameFirma }}"!</h3>
-                <p class="promo__text">Я рада приветствовать вас на своем сайте. Вы можете ознакомиться с ассортиментом для
-                    заказа тортов из качественных ингредиентов с доставкой:
-                    <br>
-                    Индивидуальные торты, для семейного вечера, дня рождения, свадьбы и других событий.
+                <p class="promo__text">Я рада приветствовать вас на своем сайте. Вы можете ознакомиться с ассортиментом для заказа тортов из качественных ингредиентов с доставкой:
+                <br>
+                Индивидуальные торты, для семейного вечера, дня рождения, свадьбы и других событий.
                 </p>
                 <p class="promo__text">Ваш кондитер, {{ infoLogo.confectionersName }}.</p>
                 <router-link class="promo__btn" to="/about"><span>Обо мне</span>
@@ -73,14 +72,10 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
 import 'swiper/css';
-
 import 'swiper/css/pagination';
-
-//   import './style.css';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
-
 
 export default {
     name: "PromoComponent",

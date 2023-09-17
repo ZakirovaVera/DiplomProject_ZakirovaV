@@ -1,9 +1,8 @@
 <template>
     <div class="product">
-        <img class="product__img" :src="fil.img"><a class="product__title" href="/catalog">{{ fil.name }}</a>
+        <img class="product__img" :src="fil.img">
+        <a class="product__title" href="/catalog">{{ fil.name }}</a>
         <div>
-            
-            <!-- <h2 class="product__title">{{ fil.name }}</h2> -->
             <p class="product__text product__text-price">{{ fil.price }} руб/кг</p>
             <p class="product__text">{{ fil.description }}</p>
         </div>
@@ -21,7 +20,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/vars";
-
 
 .product {
     display: flex;
