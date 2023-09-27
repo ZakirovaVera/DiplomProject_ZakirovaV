@@ -93,7 +93,7 @@ export default {
                 font-weight: 400;
                 line-height: 50px;
                 word-wrap: break-word;
-                text-align: justify
+                text-align: justify;
             }
         }
     }
@@ -171,7 +171,7 @@ export default {
         font-weight: 400;
         line-height: 33px;
         letter-spacing: 0.22px;
-        text-align: justify
+        // text-align: justify;
     }
 }
 </style>

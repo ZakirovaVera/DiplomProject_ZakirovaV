@@ -12,6 +12,9 @@
             <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
             <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
             <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
+            <button @click="isShow=!isShow">Показать еще</button>
+        <p class="animation" v-show="isShow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ab impedit
+            dolor reiciendis excepturi numquam molestias quam sunt voluptatibus ad.</p>
         </div>
     </div>
     <section class="product-content center">
@@ -50,6 +53,7 @@ export default {
             currentContents: [],
             currentTag: null,
             isListFillings: false,
+            isShow: false,
         }
     },
     components: {
@@ -99,6 +103,18 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/vars";
+@keyframes vision {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+.animation {
+        animation: vision 1s ease-in-out;
+    }
 
 .product-text-box {
     padding: 0 4px 0;

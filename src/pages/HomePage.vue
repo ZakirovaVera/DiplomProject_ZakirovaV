@@ -232,7 +232,7 @@ export default {
     text-align: center;
     font-size: 50px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 62.5px;
     letter-spacing: 1px;
     padding-bottom: 50px;

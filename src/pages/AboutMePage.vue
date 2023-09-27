@@ -1,15 +1,16 @@
 <template>
     <BannerComponent />
     <section class="about-me center">
-        <div class="about-me__banner">
+        <div class="about-me__conteiner">
             <div class="about-me__img-wrap">
                 <img class="about-me__img" :src="imgAboutMe" alt="photo">
             </div>
             <div class="about-me__content">
                 <h2 class="about-me__heading">Обо мне</h2>
-                <p class="about-me__text" v-for="item in textAboutMe" :key="item">{{ item }}</p>
+                <p class="about-me__text" v-for="text in textAboutMe" :key="text">{{ text }}</p>
                 <div class="about-me__content__img">
-                    <img src="@/assets/img/about-me_img.png" alt="img"></div>
+                    <img src="@/assets/img/about-me_img.png" alt="img">
+                </div>
             </div>
         </div>
     </section>
@@ -20,14 +21,14 @@
             <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
         </div>
         <h3 class="history__heading">Моя история</h3>
-        <p class="history__text" v-for="item in historyAboutMe" :key="item">{{ item }}</p>
+        <p class="history__text" v-for="text in historyAboutMe" :key="text">{{ text }}</p>
         <img class="history__img" :src="imgAboutMeTwo" alt="photo">
     </div>
     <div class="about-me__diplom center">
         <h2 class="about-me__heading heading-center">Мои дипломы образования</h2>
         <swiper :cssMode="true" :navigation="true" :pagination="true" :mousewheel="true" :keyboard="true" :modules="modules"
             class="mySwiper">
-            <swiper-slide v-for="item in infoLogo.diplom" :key="index">
+            <swiper-slide v-for="item in infoLogo.diplom" :key="item">
                 <div>
                     <img :src="item" alt="diplom">
                 </div>
@@ -39,13 +40,11 @@
 <script>
 import { mapState } from 'vuex';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
 // Import Swiper styles
 import 'swiper/css';
 
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import BannerComponent from '@/components/BannerComponent.vue';
@@ -99,17 +98,11 @@ export default {
     object-fit: cover;
 }
 
-.heading-center {
-    text-align: center;
-    padding-top: 40px;
-}
-
 .about-me {
-    // background: $colorPromo;
     padding-top: 40px;
     padding-bottom: 40px;
 
-    &__banner {
+    &__conteiner {
         display: flex;
         flex-direction: row;
         gap: 50px;
@@ -128,9 +121,11 @@ export default {
 
     &__content {
         padding-right: 4px;
-        &__img{
+
+        &__img {
             text-align: end;
-            & img{
+
+            & img {
                 width: 50%;
             }
         }
@@ -159,6 +154,11 @@ export default {
     &__diplom {
         padding-bottom: 60px;
     }
+}
+
+.heading-center {
+    text-align: center;
+    padding-top: 40px;
 }
 
 .history {
@@ -199,5 +199,4 @@ export default {
         border-radius: 20px 20px 20px 20px;
         padding-top: 20px
     }
-}
-</style>
+}</style>
