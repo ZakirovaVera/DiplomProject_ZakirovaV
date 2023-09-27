@@ -405,9 +405,16 @@ export default createStore({
       },
     ],
     imgAboutMe: require('@/assets/img/aboutMe.jpg'),
+    imgAboutMeTwo: require('@/assets/img/history.png'),
     reviewsSwiper: [
       require('@/assets/img/reviews1.jpg'), require('@/assets/img/reviews2.jpg'), require('@/assets/img/reviews3.jpg'), require('@/assets/img/reviews4.jpg'), require('@/assets/img/reviews5.jpg'), require('@/assets/img/reviews6.jpg'), require('@/assets/img/reviews7.jpg'), require('@/assets/img/reviews8.jpg'), require('@/assets/img/reviews9.jpg'), require('@/assets/img/reviews10.jpg'), require('@/assets/img/reviews11.jpg'), require('@/assets/img/reviews12.jpg'), require('@/assets/img/reviews13.jpg'), require('@/assets/img/reviews14.jpg'), require('@/assets/img/reviews15.jpg'), require('@/assets/img/reviews16.jpg'), require('@/assets/img/reviews17.jpg'), require('@/assets/img/reviews18.jpg'), require('@/assets/img/reviews19.jpg'), require('@/assets/img/reviews20.jpg'), require('@/assets/img/reviews21.jpg'), require('@/assets/img/reviews22.jpg'), require('@/assets/img/reviews23.jpg'), require('@/assets/img/reviews24.jpg'), require('@/assets/img/reviews25.jpg'), require('@/assets/img/reviews26.jpg'), require('@/assets/img/reviews27.jpg'), require('@/assets/img/reviews28.jpg'), require('@/assets/img/reviews29.jpg'), require('@/assets/img/reviews30.jpg'), require('@/assets/img/reviews31.jpg'), require('@/assets/img/reviews32.jpg'), require('@/assets/img/reviews33.jpg'), require('@/assets/img/reviews34.jpg'), require('@/assets/img/reviews35.jpg'), require('@/assets/img/reviews36.jpg'), require('@/assets/img/reviews37.jpg'), require('@/assets/img/reviews38.jpg'), require('@/assets/img/reviews39.jpg'), require('@/assets/img/reviews40.jpg'), require('@/assets/img/reviews41.jpg'), require('@/assets/img/reviews42.jpg'), require('@/assets/img/reviews43.jpg')
-    ]
+    ],
+    textAboutMe: [
+      'Меня зовут Юлия, и вот уже более 4 лет пеку торты для Вас. Постоянно совершенствую свое мастерство: посещаю мастер-классы, перенимаю опыт у коллег, расширяю ассортимент. Готова воплотить любые Ваши идеи.','Спасибо Вам, что выбрали меня и остаетесь со мной.','Ваш кондитер, Юлия.'
+    ],
+    historyAboutMe: [
+      'Хочу немного рассказать о себе и ближе познакомиться с Вами.','В начале своего пути у меня были страхи и сомнения, как я буду печь на заказ, как я буду предлагать Вам свои тортики и десерты. И на сегодняшний день какие стали мои изделия судить Вам, но я постоянно совершенствую свое мастерство.','Еще обучаясь в школе я получила корочки кондитера, а инициатором были мои школьные подружки с одной из них мы дружим до сих пор. Пока я болела, записали меня вместе с собой на кондитерские курсы, а я грезила быть секретарем.','И так мои корочки были не востребованы много лет...','Судьба распорядилась по другому, я получила два высших образования по квалификации педагог-психолог, экономист и третье бухгалтер. Искала себя.','Я благодарна, что я попробовала себя в разных направлениях. Это мне дало опыт, новые знакомства и возможности.','Находясь в отпуске по уходу за младшим сыном я начала печь, но не для продажи, а чтобы порадовать своих близких.','Мои близкие стали оценивать мои кулинарные способности и хвалить меня, что заставило меня развиваться больше и дальше. И мое хобби переросло в основной вид деятельности. В это время произошло сокращение сотрудников на моем постоянном рабочем месте и судьба заставила меня вспомнить о моем свидетельстве кондитера 3 разряда. И понеслось...','Хочу отметить то что эта сфера деятельности мне более интересна чем возня с бумагами в офисе. Потому что здесь можно проявлять себя: творчество, креативность, воплощать идеи в реальность, развивать себя и не стоять на месте, а самое главное видеть результат своей работы. Мои предыдущие дипломы мне тоже пригодились: бухгалтерия - в расчетах, психолог - в общение с клиентами. А старший сын глядя на меня определил для себя профессию Кондитер.','Я чувствую себя счастливой потому, что нашла себя.'
+    ],
   },
   getters: {
     getTop3(state) {
@@ -417,9 +424,7 @@ export default createStore({
     },
     getTags(state) {
       return state.listFillings
-        .map(function (item) {
-          return item.tag;
-        }).filter((value, index, array) => array.indexOf(value) === index);
+        .map((item) => item.tag).filter((value, index, array) => array.indexOf(value) === index);
     }
   },
   mutations: {

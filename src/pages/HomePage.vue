@@ -6,12 +6,13 @@
         <div class="promo__slogan">
             <div class="promo__info">
                 <h3 class="promo__title">Добро пожаловать на сайт "{{ infoLogo.nameFirma }}"!</h3>
-                <p class="promo__text">Я рада приветствовать вас на своем сайте. Вы можете ознакомиться с ассортиментом для заказа тортов из качественных ингредиентов с доставкой:
-                <br>
-                Индивидуальные торты, для семейного вечера, дня рождения, свадьбы и других событий.
+                <p class="promo__text">Я рада приветствовать вас на своем сайте. Вы можете ознакомиться с ассортиментом для
+                    заказа тортов из качественных ингредиентов с доставкой:
+                    <br>
+                    Индивидуальные торты, для семейного вечера, дня рождения, свадьбы и других событий.
                 </p>
                 <p class="promo__text">Ваш кондитер, {{ infoLogo.confectionersName }}.</p>
-                <router-link class="promo__btn" to="/about"><span>Обо мне</span>
+                <router-link class="promo__btn" to="/about">Обо мне
                     <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.85938 8.43542L15.5826 8.29857M10.4776 1.91138L17.0005 8.43436L10.3461 15.0887"
                             stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
@@ -141,7 +142,6 @@ export default {
     border-radius: 20px 20px 20px 20px;
 }
 
-
 .promo {
     display: flex;
     background: $colorPromo;
@@ -182,6 +182,7 @@ export default {
     }
 
     &__text {
+        text-indent: 25px;
         font-style: normal;
         font-weight: 400;
         font-size: 32px;
@@ -268,8 +269,6 @@ export default {
     }
 
     &__item {
-
-        // width: 300px;
         &_title {
             color: $colorFont;
             text-align: center;
@@ -291,4 +290,5 @@ export default {
             text-align: justify;
         }
     }
-}</style>
+}
+</style>

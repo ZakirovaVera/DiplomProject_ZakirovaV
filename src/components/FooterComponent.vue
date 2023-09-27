@@ -6,7 +6,7 @@
                 <h2 class="footer__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
             <h2 class="footer__heading footer__heading-color">Заказ торта в Тюмени</h2>
-            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi quod est voluptas ducimus aliquid tempora aperiam quidem illum voluptatum!</p>
+            <p class="footer__text">Индивидуальные торты, для семейного вечера, дня рождения, свадьбы и других событий.</p>
         </div>
         <div class="footer__center">
             <h2 class="footer__heading">Контакты</h2>

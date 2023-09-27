@@ -1,5 +1,5 @@
 <template>
-    <BannerComponent/>
+    <BannerComponent />
     <section class="about-me center">
         <div class="about-me__banner">
             <div class="about-me__img-wrap">
@@ -7,18 +7,22 @@
             </div>
             <div class="about-me__content">
                 <h2 class="about-me__heading">Обо мне</h2>
-                <p class="about-me__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur a, similique
-                    impedit corporis facilis hic quaerat tempora, dolore natus, iure nemo sunt et! Quasi eligendi blanditiis
-                    earum in corrupti quia. Nesciunt dignissimos ipsa modi, excepturi veniam ipsum minima, iste consectetur
-                    magni facere, ea aspernatur aut exercitationem facilis voluptate quis nobis.</p>
-                <p class="about-me__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur a, similique
-                    impedit corporis facilis hic quaerat tempora, dolore natus, iure nemo sunt et! Quasi eligendi blanditiis
-                    earum in corrupti quia. Nesciunt dignissimos ipsa modi, excepturi veniam ipsum minima, iste consectetur
-                    magni facere, ea aspernatur aut exercitationem facilis voluptate quis nobis.</p>
+                <p class="about-me__text" v-for="item in textAboutMe" :key="item">{{ item }}</p>
+                <div class="about-me__content__img">
+                    <img src="@/assets/img/about-me_img.png" alt="img"></div>
             </div>
         </div>
-
     </section>
+    <div class="history center">
+        <div class="history__icon">
+            <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
+            <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
+            <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
+        </div>
+        <h3 class="history__heading">Моя история</h3>
+        <p class="history__text" v-for="item in historyAboutMe" :key="item">{{ item }}</p>
+        <img class="history__img" :src="imgAboutMeTwo" alt="photo">
+    </div>
     <div class="about-me__diplom center">
         <h2 class="about-me__heading heading-center">Мои дипломы образования</h2>
         <swiper :cssMode="true" :navigation="true" :pagination="true" :mousewheel="true" :keyboard="true" :modules="modules"
@@ -49,17 +53,17 @@ import BannerComponent from '@/components/BannerComponent.vue';
 export default {
     data() {
         return {
-            title:"Обо мне"
+            title: "Обо мне"
         }
     },
     computed: {
-        ...mapState(['imgAboutMe', 'infoLogo'])
+        ...mapState(['imgAboutMe', 'infoLogo', 'textAboutMe', 'historyAboutMe', 'imgAboutMeTwo'])
     },
     components: {
-    Swiper,
-    SwiperSlide,
-    BannerComponent
-},
+        Swiper,
+        SwiperSlide,
+        BannerComponent
+    },
     setup() {
         return {
             modules: [Navigation, Pagination, Mousewheel, Keyboard],
@@ -101,7 +105,7 @@ export default {
 }
 
 .about-me {
-    background: $colorPromo;
+    // background: $colorPromo;
     padding-top: 40px;
     padding-bottom: 40px;
 
@@ -121,8 +125,15 @@ export default {
         height: 100%;
         border-radius: 0px 80px 0px 80px;
     }
-    &__content{
+
+    &__content {
         padding-right: 4px;
+        &__img{
+            text-align: end;
+            & img{
+                width: 50%;
+            }
+        }
     }
 
     &__heading {
@@ -135,6 +146,7 @@ export default {
     }
 
     &__text {
+        text-indent: 25px;
         font-style: normal;
         font-weight: 400;
         font-size: 32px;
@@ -147,4 +159,45 @@ export default {
     &__diplom {
         padding-bottom: 60px;
     }
-}</style>
+}
+
+.history {
+    text-align: center;
+    background: $colorPromo;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &__icon {
+        & img {
+            padding: 0 10px 0;
+        }
+    }
+
+    &__heading {
+        color: $colorFont;
+        text-align: center;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 62.5px;
+        letter-spacing: 1px;
+        padding-bottom: 30px;
+    }
+
+    &__text {
+        text-indent: 25px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 38px;
+        color: $colorFont;
+        padding-bottom: 16px;
+        text-align: justify
+    }
+
+    &__img {
+        border-radius: 20px 20px 20px 20px;
+        padding-top: 20px
+    }
+}
+</style>
