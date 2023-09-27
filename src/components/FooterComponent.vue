@@ -18,6 +18,12 @@
             <h2 class="footer__heading">Соц.сети</h2>
             <div class="footer__right_icon">
                 <a :href="infoLogo.linkVk" class="footer__right_icon_a">
+                    VK
+                </a>
+                <a :href="infoLogo.linkInstagram" class="footer__right_icon_a">
+                    Нельзя_gram
+                </a>
+                <!-- <a :href="infoLogo.linkVk" class="footer__right_icon_a">
                     <svg viewBox="0 0 176 176" xmlns="http://www.w3.org/2000/svg">
                         <g id="Layer_2" data-name="Layer 2">
                             <g id="_19.vk" data-name="19.vk">
@@ -42,7 +48,7 @@
                             </g>
                         </g>
                     </svg>
-                </a>
+                </a> -->
             </div>
         </div>
     </footer>
@@ -87,7 +93,7 @@ export default {
                 font-weight: 400;
                 line-height: 50px;
                 word-wrap: break-word;
-                text-align:justify
+                text-align: justify
             }
         }
     }
@@ -108,15 +114,39 @@ export default {
             display: flex;
             gap: 16px;
 
-            &_a svg {
-                fill: $colorWhite;
-                height: 40px;
-                width: 40px;
+            &_a {
+                border-radius: 10px;
+                background: $colorWhite;
+                box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+                display: flex;
+                padding: 10px 10px;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                color: #222;
+                text-align: center;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 125%;
+                letter-spacing: 0.36px;
 
                 &:hover {
-                    fill: $colorSite;
+                    background: $colorSite;
+                    color: $colorFon;
                 }
             }
+
+            // &_a svg {
+            //     fill: $colorWhite;
+            //     height: 40px;
+            //     width: 40px;
+
+            //     &:hover {
+            //         fill: $colorSite;
+            //     }
+            // }
         }
     }
 
@@ -141,7 +171,7 @@ export default {
         font-weight: 400;
         line-height: 33px;
         letter-spacing: 0.22px;
-        text-align:justify
+        text-align: justify
     }
 }
 </style>

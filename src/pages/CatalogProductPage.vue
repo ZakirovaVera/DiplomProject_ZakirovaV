@@ -5,7 +5,8 @@
             <h1 class="product-text__title" v-if="!currentTag || isListFillings">Каталог</h1>
             <h1 class="product-text__title" v-else>{{ currentTag }}</h1>
             <h2 class="product-text__subtitle">Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h2>
-            <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм.</p>
+            <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм, стоимость 1500-1800₽</p>
+            <p class="product-text__text">Мини тортик от 1 кг до 2 кг - стоимость 1700₽ за кг.</p>
             <p class="product-text__text">Стоимость оформения оплачивается отдельно.</p>
             <p class="product-text__text">Покрытие велюр + 500₽.</p>
             <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
