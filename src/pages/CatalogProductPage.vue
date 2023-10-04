@@ -12,9 +12,71 @@
             <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
             <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
             <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
-            <button @click="isShow=!isShow">Показать еще</button>
-        <p class="animation" v-show="isShow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ab impedit
-            dolor reiciendis excepturi numquam molestias quam sunt voluptatibus ad.</p>
+            <div class="product-text__btn">
+                <div  v-for="item in fillingOptions" :key="index">
+                    <button @click="isShow1 = !isShow1">{{ item.name }}</button>
+                    <div class="animation" v-show="isShow1">
+                        <p v-for="el in item.text" :key="el">{{ el }}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class="product-text__btn">
+                <button @click="isShow1 = !isShow1">НАЧИНКИ 1500 ₽ за 1 кг</button>
+                <button @click="isShow2 = !isShow2">НАЧИНКИ 1600 ₽ за 1 кг</button>
+                <button @click="isShow3 = !isShow3">НАЧИНКИ 1700 ₽ за 1 кг</button>
+                <button @click="isShow4 = !isShow4">НАЧИНКИ 1800 ₽ за 1 кг</button>
+            </div>
+
+            <div class="product-text__text-grid">
+                <div class="animation" v-show="isShow1" v-for="item in fillingOptions" :key="index">
+                    <p v-for="el in item" :key="el">{{ el }}</p>
+                </div>
+                <div class="animation" v-show="isShow1">
+                    <p>Начинки</p>
+                    <p>НАЧИНКИ 1500 ₽ за 1 кг + оформление</p>
+                    <p>Заказ от 2 кг шаг 500 грамм
+                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
+                    <p>1 Сникерс классический</p>
+                    <p>2 Красный бархат классический </p>
+                    <p>3 Банан карамель</p>
+                    <p>4 Молочная девочка </p>
+                </div>
+                <div class="animation" v-if="!isShow1"></div> -->
+            <!-- <div class="animation" v-show="isShow2">
+                    <p>Начинки</p>
+                    <p>НАЧИНКИ 1600 ₽ за 1 кг + оформление</p>
+                    <p>Заказ от 2 кг шаг 500 грамм
+                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
+                    <p>1 Сникерс классический</p>
+                    <p>2 Красный бархат классический </p>
+                    <p>3 Банан карамель</p>
+                    <p>4 Молочная девочка </p>
+                </div>
+                <div class="animation" v-if="!isShow2"></div>
+                <div class="animation" v-show="isShow3">
+                    <p>Начинки</p>
+                    <p>НАЧИНКИ 1700 ₽ за 1 кг + оформление</p>
+                    <p>Заказ от 2 кг шаг 500 грамм
+                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
+                    <p>1 Сникерс классический</p>
+                    <p>2 Красный бархат классический </p>
+                    <p>3 Банан карамель</p>
+                    <p>4 Молочная девочка </p>
+                </div>
+                <div class="animation" v-if="!isShow3"></div>
+                <div class="animation" v-show="isShow4">
+                    <p>Начинки</p>
+                    <p>НАЧИНКИ 1800 ₽ за 1 кг + оформление</p>
+                    <p>Заказ от 2 кг шаг 500 грамм
+                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
+                    <p>1 Сникерс классический</p>
+                    <p>2 Красный бархат классический </p>
+                    <p>3 Банан карамель</p>
+                    <p>4 Молочная девочка </p>
+                </div>
+                <div class="animation" v-if="!isShow4"></div> -->
+            <!-- </div> -->
         </div>
     </div>
     <section class="product-content center">
@@ -53,7 +115,10 @@ export default {
             currentContents: [],
             currentTag: null,
             isListFillings: false,
-            isShow: false,
+            isShow1: false,
+            isShow2: false,
+            isShow3: false,
+            isShow4: false,
         }
     },
     components: {
@@ -61,7 +126,7 @@ export default {
         BannerComponent
     },
     computed: {
-        ...mapState(['listFillings']),
+        ...mapState(['listFillings', 'fillingOptions']),
         ...mapGetters(['getTags']),
 
         totalPages() {
@@ -103,18 +168,20 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/vars";
-@keyframes vision {
-        from {
-            opacity: 0;
-        }
 
-        to {
-            opacity: 1;
-        }
+@keyframes vision {
+    from {
+        opacity: 0;
     }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .animation {
-        animation: vision 1s ease-in-out;
-    }
+    animation: vision 1s ease-in-out;
+}
 
 .product-text-box {
     padding: 0 4px 0;
@@ -154,6 +221,20 @@ export default {
         line-height: 33px;
         letter-spacing: 0.22px;
         padding-bottom: 4px;
+    }
+
+    &__btn {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        justify-content: space-evenly;
+    }
+
+    &__text-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        justify-content: space-evenly;
     }
 }
 
@@ -231,5 +312,4 @@ export default {
     grid-template-columns: repeat(3, 360px);
     gap: 30px;
     justify-content: space-evenly;
-}
-</style>
+}</style>
