@@ -10,9 +10,6 @@
 <script>
 export default {
     name: 'ProductFillingOptionsComponent',
-    // data: {
-    //     isShow: false,
-    // },
     props: {
         filOpt: Object,
         isShow: Boolean,
