@@ -197,6 +197,6 @@ export default {
 
     &__img {
         border-radius: 20px 20px 20px 20px;
-        padding-top: 20px
+        margin-top: 20px
     }
 }</style>

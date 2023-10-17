@@ -12,15 +12,18 @@
             <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
             <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
             <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
-            <div class="product-text__btn">
-                <div  v-for="item in fillingOptions" :key="index">
+            <div class="product-text__btn-conteiner">
+                <ProductFillingOptionsComponent v-for="filOpt in fillingOptions" :key="index" :filOpt="filOpt" :isShow="isShow"/>
+            </div>
+        
+            <!-- <div class="product-text__btn">
+                <div v-for="item in fillingOptions" :key="index">
                     <button @click="isShow1 = !isShow1">{{ item.name }}</button>
                     <div class="animation" v-show="isShow1">
                         <p v-for="el in item.text" :key="el">{{ el }}</p>
                     </div>
-
                 </div>
-            </div>
+            </div> -->
             <!-- <div class="product-text__btn">
                 <button @click="isShow1 = !isShow1">НАЧИНКИ 1500 ₽ за 1 кг</button>
                 <button @click="isShow2 = !isShow2">НАЧИНКИ 1600 ₽ за 1 кг</button>
@@ -80,7 +83,7 @@
         </div>
     </div>
     <section class="product-content center">
-        <div class="product__sidebar">
+        <div class="product__sidebar" id="el">
             <div class="product__sidebar__btn-wrap">
                 <button class="product__sidebar__btn" @click="getListFillings">Вся
                     продукция</button>
@@ -95,7 +98,8 @@
             </div>
         </div>
         <div v-if="totalPages > 1" class="pagination">
-            <router-link v-for="pageNumber in totalPages" :key="pageNumber" :to="getPageLink(pageNumber)">
+            <router-link class="pagination_a" v-for="pageNumber in totalPages" :key="pageNumber" :to="getPageLink(pageNumber)"
+                @click="clickPaginatorNum()">
                 {{ pageNumber }}
             </router-link>
         </div>
@@ -105,6 +109,7 @@
 <script>
 import BannerComponent from '@/components/BannerComponent.vue';
 import ProductComponent from '@/components/ProductComponent.vue';
+import ProductFillingOptionsComponent from '@/components/ProductFillingOptionsComponent.vue';
 import { mapState, mapGetters } from 'vuex';
 
 export default {
@@ -119,12 +124,14 @@ export default {
             isShow2: false,
             isShow3: false,
             isShow4: false,
+            isShow: false,
         }
     },
     components: {
-        ProductComponent,
-        BannerComponent
-    },
+    ProductComponent,
+    BannerComponent,
+    ProductFillingOptionsComponent,
+},
     computed: {
         ...mapState(['listFillings', 'fillingOptions']),
         ...mapGetters(['getTags']),
@@ -161,6 +168,10 @@ export default {
             this.currentContents = this.listFillings;
             this.isListFillings = true;
             this.$router.push(this.getPageLink(1))
+        },
+        clickPaginatorNum() {
+            const el = document.getElementById('el');
+            el.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         }
     },
 }
@@ -223,10 +234,10 @@ export default {
         padding-bottom: 4px;
     }
 
-    &__btn {
+    &__btn-conteiner {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
+        gap: 20px;
         justify-content: space-evenly;
     }
 
@@ -242,7 +253,7 @@ export default {
     margin-top: 20px;
     text-align: center;
 
-    & a {
+    &_a {
         margin-right: 20px;
         cursor: pointer;
         color: #4D5053;
@@ -254,11 +265,14 @@ export default {
         padding-bottom: 24px;
 
         &:hover {
-            color: $colorSite;
+            color:$colorSite;
+        }
+        &:active {
+            color:$colorTextBlack;
+            font-weight: 700;
         }
     }
 }
-
 .product-content {
     padding-bottom: 96px;
 
@@ -312,4 +326,5 @@ export default {
     grid-template-columns: repeat(3, 360px);
     gap: 30px;
     justify-content: space-evenly;
-}</style>
+}
+</style>
