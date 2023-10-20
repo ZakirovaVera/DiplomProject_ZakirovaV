@@ -13,73 +13,8 @@
             <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
             <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
             <div class="product-text__btn-conteiner">
-                <ProductFillingOptionsComponent v-for="filOpt in fillingOptions" :key="index" :filOpt="filOpt" :isShow="isShow"/>
+                <ProductFillingOptionsComponent v-for="filOpt in fillingOptions" :key="index" :filOpt="filOpt" :isActive="isActive"/>
             </div>
-        
-            <!-- <div class="product-text__btn">
-                <div v-for="item in fillingOptions" :key="index">
-                    <button @click="isShow1 = !isShow1">{{ item.name }}</button>
-                    <div class="animation" v-show="isShow1">
-                        <p v-for="el in item.text" :key="el">{{ el }}</p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="product-text__btn">
-                <button @click="isShow1 = !isShow1">НАЧИНКИ 1500 ₽ за 1 кг</button>
-                <button @click="isShow2 = !isShow2">НАЧИНКИ 1600 ₽ за 1 кг</button>
-                <button @click="isShow3 = !isShow3">НАЧИНКИ 1700 ₽ за 1 кг</button>
-                <button @click="isShow4 = !isShow4">НАЧИНКИ 1800 ₽ за 1 кг</button>
-            </div>
-
-            <div class="product-text__text-grid">
-                <div class="animation" v-show="isShow1" v-for="item in fillingOptions" :key="index">
-                    <p v-for="el in item" :key="el">{{ el }}</p>
-                </div>
-                <div class="animation" v-show="isShow1">
-                    <p>Начинки</p>
-                    <p>НАЧИНКИ 1500 ₽ за 1 кг + оформление</p>
-                    <p>Заказ от 2 кг шаг 500 грамм
-                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
-                    <p>1 Сникерс классический</p>
-                    <p>2 Красный бархат классический </p>
-                    <p>3 Банан карамель</p>
-                    <p>4 Молочная девочка </p>
-                </div>
-                <div class="animation" v-if="!isShow1"></div> -->
-            <!-- <div class="animation" v-show="isShow2">
-                    <p>Начинки</p>
-                    <p>НАЧИНКИ 1600 ₽ за 1 кг + оформление</p>
-                    <p>Заказ от 2 кг шаг 500 грамм
-                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
-                    <p>1 Сникерс классический</p>
-                    <p>2 Красный бархат классический </p>
-                    <p>3 Банан карамель</p>
-                    <p>4 Молочная девочка </p>
-                </div>
-                <div class="animation" v-if="!isShow2"></div>
-                <div class="animation" v-show="isShow3">
-                    <p>Начинки</p>
-                    <p>НАЧИНКИ 1700 ₽ за 1 кг + оформление</p>
-                    <p>Заказ от 2 кг шаг 500 грамм
-                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
-                    <p>1 Сникерс классический</p>
-                    <p>2 Красный бархат классический </p>
-                    <p>3 Банан карамель</p>
-                    <p>4 Молочная девочка </p>
-                </div>
-                <div class="animation" v-if="!isShow3"></div>
-                <div class="animation" v-show="isShow4">
-                    <p>Начинки</p>
-                    <p>НАЧИНКИ 1800 ₽ за 1 кг + оформление</p>
-                    <p>Заказ от 2 кг шаг 500 грамм
-                        2-2,5 кг; 2,5-3 кг. и т.д.</p>
-                    <p>1 Сникерс классический</p>
-                    <p>2 Красный бархат классический </p>
-                    <p>3 Банан карамель</p>
-                    <p>4 Молочная девочка </p>
-                </div>
-                <div class="animation" v-if="!isShow4"></div> -->
-            <!-- </div> -->
         </div>
     </div>
     <section class="product-content center">
@@ -98,8 +33,8 @@
             </div>
         </div>
         <div v-if="totalPages > 1" class="pagination">
-            <router-link class="pagination_a" v-for="pageNumber in totalPages" :key="pageNumber" :to="getPageLink(pageNumber)"
-                @click="clickPaginatorNum()">
+            <router-link class="pagination_a" v-for="pageNumber in totalPages" :key="pageNumber"
+                :to="getPageLink(pageNumber)" @click="clickPaginatorNum()">
                 {{ pageNumber }}
             </router-link>
         </div>
@@ -120,18 +55,13 @@ export default {
             currentContents: [],
             currentTag: null,
             isListFillings: false,
-            isShow1: false,
-            isShow2: false,
-            isShow3: false,
-            isShow4: false,
-            isShow: false,
         }
     },
     components: {
-    ProductComponent,
-    BannerComponent,
-    ProductFillingOptionsComponent,
-},
+        ProductComponent,
+        BannerComponent,
+        ProductFillingOptionsComponent,
+    },
     computed: {
         ...mapState(['listFillings', 'fillingOptions']),
         ...mapGetters(['getTags']),
@@ -172,7 +102,7 @@ export default {
         clickPaginatorNum() {
             const el = document.getElementById('el');
             el.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-        }
+        },
     },
 }
 </script>
@@ -189,7 +119,62 @@ export default {
         opacity: 1;
     }
 }
+.project-content__btn-wrap {
+    // width: 880px;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    gap: 96px;
+    display: inline-flex;
+    border-radius: 18px;
+    border: 0.5px #CDA274 solid;
+    margin-bottom: 60px;
+}
 
+.project-content__btn {
+    height: 100%;
+    border: none;
+    background: none;
+    padding-left: 66px;
+    padding-right: 66px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    text-align: center;
+    color: #292F36;
+    text-align: center;
+    font-family: Jost;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    /* 22.5px */
+    letter-spacing: 0.36px;
+}
+
+.project-content__btn:hover {
+    padding-left: 66px;
+    padding-right: 66px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    background: #CDA274;
+    border-radius: 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-family: Jost;
+    font-weight: 600;
+    line-height: 22.50px;
+    letter-spacing: 0.36px;
+    word-wrap: break-word
+}
 .animation {
     animation: vision 1s ease-in-out;
 }
@@ -265,14 +250,19 @@ export default {
         padding-bottom: 24px;
 
         &:hover {
-            color:$colorSite;
+            color: $colorSite;
         }
+
         &:active {
-            color:$colorTextBlack;
+            color: $colorTextBlack;
             font-weight: 700;
         }
     }
 }
+.active {
+    color: $colorSite;
+}
+
 .product-content {
     padding-bottom: 96px;
 
