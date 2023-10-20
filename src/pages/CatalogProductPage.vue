@@ -33,8 +33,8 @@
             </div>
         </div>
         <div v-if="totalPages > 1" class="pagination">
-            <router-link class="pagination_a" v-for="pageNumber in totalPages" :key="pageNumber"
-                :to="getPageLink(pageNumber)" @click="clickPaginatorNum()">
+            <router-link class="pagination_a" :class="{active: pageNumber == active}" v-for="pageNumber in totalPages" :key="pageNumber"
+                :to="getPageLink(pageNumber)" @click="clickPaginatorNum(pageNumber)">
                 {{ pageNumber }}
             </router-link>
         </div>
@@ -55,6 +55,7 @@ export default {
             currentContents: [],
             currentTag: null,
             isListFillings: false,
+            active: 1,
         }
     },
     components: {
@@ -93,15 +94,17 @@ export default {
             this.currentContents = Object.values(this.listFillings).filter((el) => el.tag === tag);
             this.isListFillings = false;
             this.$router.push(this.getPageLink(1))
+            this.active = 1;
         },
         getListFillings() {
             this.currentContents = this.listFillings;
             this.isListFillings = true;
             this.$router.push(this.getPageLink(1))
         },
-        clickPaginatorNum() {
+        clickPaginatorNum(num) {
             const el = document.getElementById('el');
             el.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            this.active = num;
         },
     },
 }
