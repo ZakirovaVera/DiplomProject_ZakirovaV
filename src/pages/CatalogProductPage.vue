@@ -4,16 +4,36 @@
         <div class="product-text-box">
             <h1 class="product-text__title" v-if="!currentTag || isListFillings">Каталог</h1>
             <h1 class="product-text__title" v-else>{{ currentTag }}</h1>
-            <h2 class="product-text__subtitle">Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h2>
-            <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм, стоимость 1500-1800₽</p>
-            <p class="product-text__text">Мини тортик от 1 кг до 2 кг - стоимость 1700₽ за кг.</p>
-            <p class="product-text__text">Стоимость оформения оплачивается отдельно.</p>
-            <p class="product-text__text">Покрытие велюр + 500₽.</p>
-            <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
-            <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
-            <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
+            <div class="product-text__subtitle-wrap" @click="isShow = !isShow">
+                <h2 class="product-text__subtitle">Торты, для семейного вечера, дня рождения, свадьбы и других событий.</h2>
+                <button class="product-text__btn">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 612"
+                        style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                        <g>
+                            <g id="_x31_0_34_">
+                                <g>
+                                    <path
+                                        d="M604.501,134.782c-9.999-10.05-26.222-10.05-36.221,0L306.014,422.558L43.721,134.782 c-9.999-10.05-26.223-10.05-36.222,0s-9.999,26.35,0,36.399l279.103,306.241c5.331,5.357,12.422,7.652,19.386,7.296 c6.988,0.356,14.055-1.939,19.386-7.296l279.128-306.268C614.5,161.106,614.5,144.832,604.501,134.782z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg></button>
+            </div>
+            <div class="animation" v-show="isShow">
+                <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм, стоимость 1500-1800₽
+                </p>
+                <p class="product-text__text">Мини тортик от 1 кг до 2 кг - стоимость 1700₽ за кг.</p>
+                <p class="product-text__text">Стоимость оформения оплачивается отдельно.</p>
+                <p class="product-text__text">Покрытие велюр + 500₽.</p>
+                <p class="product-text__text">Торт цифра, буква, сердце, звезда, кольцо, бутылка, елка - 1,7 кг.</p>
+                <p class="product-text__text">Мини тортики минимальный заказ - 6 шт вес 1,5 кг.</p>
+                <p class="product-text__text">Птичье молоко 1,5 кг - вес примерно 1,2-1,3 кг + оформление</p>
+            </div>
+
             <div class="product-text__btn-conteiner">
-                <ProductFillingOptionsComponent v-for="filOpt in fillingOptions" :key="index" :filOpt="filOpt" :isActive="isActive"/>
+                <ProductFillingOptionsComponent v-for="filOpt in fillingOptions" :key="index" :filOpt="filOpt"
+                    :isActive="isActive" />
             </div>
         </div>
     </div>
@@ -33,8 +53,8 @@
             </div>
         </div>
         <div v-if="totalPages > 1" class="pagination">
-            <router-link class="pagination_a" :class="{active: pageNumber == active}" v-for="pageNumber in totalPages" :key="pageNumber"
-                :to="getPageLink(pageNumber)" @click="clickPaginatorNum(pageNumber)">
+            <router-link class="pagination_a" :class="{ active: pageNumber == active }" v-for="pageNumber in totalPages"
+                :key="pageNumber" :to="getPageLink(pageNumber)" @click="clickPaginatorNum(pageNumber)">
                 {{ pageNumber }}
             </router-link>
         </div>
@@ -56,6 +76,7 @@ export default {
             currentTag: null,
             isListFillings: false,
             active: 1,
+            isShow: false,
         }
     },
     components: {
@@ -122,6 +143,7 @@ export default {
         opacity: 1;
     }
 }
+
 .project-content__btn-wrap {
     // width: 880px;
     height: 75px;
@@ -178,8 +200,25 @@ export default {
     letter-spacing: 0.36px;
     word-wrap: break-word
 }
+
 .animation {
+    margin-top: 10px;
+    border-radius: 26px;
+    border: 0.5px solid rgb(255, 131, 155);
+    padding: 10px 10px 20px 10px;
+    background: rgb(255, 255, 255);
     animation: vision 1s ease-in-out;
+
+    & p {
+        color: $colorFont;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 33px;
+        letter-spacing: 0.22px;
+        padding-top: 20px;
+        // padding-bottom: 24px;
+    }
 }
 
 .product-text-box {
@@ -202,14 +241,30 @@ export default {
         padding-top: 30px;
     }
 
+    &__subtitle-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        padding-bottom: 16px;
+    }
+
     &__subtitle {
         font-style: normal;
         font-weight: 400;
         font-size: 32px;
         line-height: 38px;
         color: $colorTextBlack;
-        padding-bottom: 16px;
         text-align: justify;
+    }
+
+    &__btn {
+        border: none;
+        background: none;
+
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &__text {
@@ -262,6 +317,7 @@ export default {
         }
     }
 }
+
 .active {
     color: $colorSite;
 }
