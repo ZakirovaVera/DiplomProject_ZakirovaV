@@ -1,13 +1,14 @@
 <template>
     <header class="header sticky  center">
         <div class="header__left">
-            <router-link class="header__left_logo" to="/">
+            <router-link class="header__left_logo" to="/" @click="clickLog()">
                 <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
                 <h2 class="header__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
         </div>
         <nav class="header__right ">
-            <router-link :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title }}</router-link>
+            <router-link class="header__right__a" :class="{ active: item.title == active }" @click="clickNav(item.title)" :to="item.url"
+                v-for="item in menulinks" :key="item.id">{{ item.title }}</router-link>
         </nav>
     </header>
 </template>
@@ -17,20 +18,34 @@ import { mapState } from 'vuex';
 
 export default {
     name: "HeaderComponent",
+    data() {
+        return {
+            active: '',
+        }
+    },
     computed: {
-        ...mapState(['infoLogo', 'menulinks'])
-    }
+        ...mapState(['infoLogo', 'menulinks']),
+    },
+    methods: {
+        clickNav(string) {
+            this.active = string;
+        },
+        clickLog(){
+            this.active = '';
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/vars";
 
-.sticky{
+.sticky {
     position: sticky;
     top: 0;
     z-index: 10;
 }
+
 .header {
     min-height: 75px;
     background: $colorHeaderFooter;
@@ -69,8 +84,7 @@ export default {
         gap: 33px;
         padding-right: 1rem;
 
-        & a,
-        label {
+        &__a{
             color: $colorWhite;
             text-align: center;
             font-family: Jost;
@@ -88,5 +102,9 @@ export default {
     & svg:hover path {
         fill: $colorSite;
     }
+}
+
+.active {
+    color: $colorSite;
 }
 </style>
