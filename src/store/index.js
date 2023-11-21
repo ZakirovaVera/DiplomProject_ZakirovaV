@@ -52,15 +52,15 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/red_velvet2.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: 1500,
         popularity: 10,
       },
       {
-        name: "Сникерс",
+        name: "Сникерс классический",
         tag: 'Начинки',
         img: require('@/assets/img/snickers.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: 1500,
         popularity: 8,
       },
       {
@@ -68,7 +68,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/description-raspberries_mango.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 8,
       },
       {
@@ -76,7 +76,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/chocolate_mango_passion_fruit.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -84,7 +84,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/three_chocolate.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: 1800,
         popularity: 6,
       },
       {
@@ -92,7 +92,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/milky_girl.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: 1500,
         popularity: 5,
       },
       {
@@ -100,7 +100,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/pistachio_raspberry.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: 1800,
         popularity: 9,
       },
       {
@@ -108,7 +108,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/ferreiro.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: 1800,
         popularity: 9,
       },
       {
@@ -116,7 +116,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/chocolate_berry.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 10,
       },
       {
@@ -124,7 +124,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/berry_strawberry-raspberry.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: 1700,
         popularity: 9,
       },
       {
@@ -229,7 +229,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/cupcake1.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -237,7 +237,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/cupcake2.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -245,7 +245,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/cupcake3.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -253,7 +253,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/cupcake4.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -261,7 +261,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/cupcake5.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -269,7 +269,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/cupcake6.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       //эскимо
@@ -278,7 +278,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/popsicle1.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -286,7 +286,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/popsicle2.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -294,7 +294,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/popsicle3.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -302,7 +302,7 @@ export default createStore({
         tag: 'Эскимо / Капкейк / Кейк-попс',
         img: require('@/assets/img/popsicle4.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       //чизкейк
@@ -311,7 +311,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_lime_coconut.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -319,7 +319,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_lemon.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -327,7 +327,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_raspberry_almond.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -335,7 +335,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_mango_pistachio.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -343,7 +343,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_total-berry.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -351,7 +351,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_lavender-currant.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -359,7 +359,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_raspberry_parmesan.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -367,7 +367,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_snickers.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -375,7 +375,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese_blueberry.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       {
@@ -383,7 +383,7 @@ export default createStore({
         tag: 'Чизкейк',
         img: require('@/assets/img/cheese.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: 1000,
+        price: null,
         popularity: 9,
       },
       //Другое

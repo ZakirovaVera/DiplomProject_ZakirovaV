@@ -110,7 +110,7 @@ export default {
             this.isActive__sinebar = false;
             const pageNumberParam = parseInt(this.$route.params.pageNumber);
             return isNaN(pageNumberParam) || pageNumberParam < 1 ? 1 : pageNumberParam;
-            
+
         },
         getPageLink(pageNumber) {
             return `/catalog/${pageNumber}`;
