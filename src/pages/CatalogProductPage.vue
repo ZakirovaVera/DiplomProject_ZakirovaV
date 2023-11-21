@@ -20,7 +20,7 @@
                         </g>
                     </svg></button>
             </div>
-            <div class="animation" v-show="isShow">
+            <div class="product-text_animation" v-show="isShow">
                 <p class="product-text__text">Минимальный вес торта для заказа - 2 кг, шаг 500 грамм, стоимость 1500-1800₽
                 </p>
                 <p class="product-text__text">Мини тортик от 1 кг до 2 кг - стоимость 1700₽ за кг.</p>
@@ -37,13 +37,15 @@
             </div>
         </div>
     </div>
-    <section class="product-content center">
+    <div class="product-content center">
         <div class="product__sidebar" id="el">
             <div class="product__sidebar__btn-wrap">
-                <button class="product__sidebar__btn" @click="getListFillings">Вся
+                <button class="product__sidebar__btn" :class='{ active__sinebar: active__sinebar == "" }'
+                    @click="getListFillings">Вся
                     продукция</button>
-                <button class="product__sidebar__btn" @click="clickTag(tag)" v-for="tag in getTags" :key="tag.id">{{ tag
-                }}</button>
+                <button class="product__sidebar__btn" :class="{ active__sinebar: tag == active__sinebar }"
+                    @click="clickTag(tag)" v-for="tag in getTags" :key="tag.id">{{ tag
+                    }}</button>
 
             </div>
         </div>
@@ -58,7 +60,7 @@
                 {{ pageNumber }}
             </router-link>
         </div>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -77,6 +79,8 @@ export default {
             isListFillings: false,
             active: 1,
             isShow: false,
+            active__sinebar: '',
+            isActive: false,
         }
     },
     components: {
@@ -103,8 +107,10 @@ export default {
     },
     methods: {
         getCurrentPageNumber() {
+            this.isActive__sinebar = false;
             const pageNumberParam = parseInt(this.$route.params.pageNumber);
             return isNaN(pageNumberParam) || pageNumberParam < 1 ? 1 : pageNumberParam;
+            
         },
         getPageLink(pageNumber) {
             return `/catalog/${pageNumber}`;
@@ -116,11 +122,13 @@ export default {
             this.isListFillings = false;
             this.$router.push(this.getPageLink(1))
             this.active = 1;
+            this.active__sinebar = tag;
         },
         getListFillings() {
             this.currentContents = this.listFillings;
             this.isListFillings = true;
             this.$router.push(this.getPageLink(1))
+            this.active__sinebar = '';
         },
         clickPaginatorNum(num) {
             const el = document.getElementById('el');
@@ -201,7 +209,7 @@ export default {
     word-wrap: break-word
 }
 
-.animation {
+.product-text_animation {
     margin-top: 10px;
     border-radius: 26px;
     border: 0.5px solid rgb(255, 131, 155);
@@ -335,6 +343,7 @@ export default {
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    padding: 0px 4px 0px;
 
     &__btn-wrap {
         display: flex;
@@ -364,16 +373,22 @@ export default {
         //     color: #FFF;
         // }
         &:hover {
-            background-color: $colorSite;
-            color: $colorFon;
+            background-color: $colorPromo;
+            color: $colorTextBlack;
         }
     }
 }
 
 .product__products {
     display: grid;
-    grid-template-columns: repeat(3, 360px);
+    grid-template-columns: repeat(auto-fill, 360px);
+    // grid-template-columns: repeat(3, 360px);
     gap: 30px;
     justify-content: space-evenly;
+}
+
+.active__sinebar {
+    background-color: $colorSite;
+    color: $colorFon;
 }
 </style>

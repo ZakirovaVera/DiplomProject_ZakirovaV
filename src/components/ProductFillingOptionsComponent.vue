@@ -1,6 +1,6 @@
 <template>
     <div class="product-text__btn">
-        <button class="product-text__btn-btn" :class="{ isActive }" @click="isActive = !isActive">{{ filOpt.name }}</button>
+        <button class="product-text__btn-btn" :class="{ class_Active: class_Active }" @click="isActive = !isActive">{{ filOpt.name }}</button>
         <div class="animation" v-show="isActive">
             <p v-for="el in filOpt.text" :key="el">{{ el }}</p>
         </div>
@@ -47,7 +47,7 @@ export default {
 
 }
 
-.isActive {
+.class_Active {
     background: $colorSite;
     color: $colorFon;
 }
