@@ -82,7 +82,7 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 26px;
-        width: 258px;
+        // width: 258px;
 
         &_icon {
             display: flex;
@@ -111,16 +111,6 @@ export default {
                     color: $colorFon;
                 }
             }
-
-            // &_a svg {
-            //     fill: $colorWhite;
-            //     height: 40px;
-            //     width: 40px;
-
-            //     &:hover {
-            //         fill: $colorSite;
-            //     }
-            // }
         }
     }
 
@@ -164,10 +154,6 @@ export default {
             }
         }
 
-        &__center {
-            min-width: 200px;
-        }
-
         &__right_icon {
             justify-content: center;
         }
@@ -176,7 +162,6 @@ export default {
 
 @media (max-width: 767px) {
     .footer {
-        grid-template-columns: repeat(auto-fill, 320px);
-        gap: 40px;
+        grid-template-columns: repeat(auto-fill, 350px);
     }
 }</style>
