@@ -10,14 +10,16 @@
             <router-link class="header__right__a" :class="{ active: item.title == active }" @click="clickNav(item.title)"
                 :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title }}</router-link>
         </nav>
-        <div class="header__menu">
-            <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
-            <label for="burger-checkbox" class="burger"></label>
-            <ul class="menu-list">
-                <router-link class="header__right__a menu-item" :class="{ active: item.title == active }"
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <nav class="menu__box">
+                <router-link class="header__right__a menu__item" :class="{ active: item.title == active }"
                     @click="clickNav(item.title)" :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title
                     }}</router-link>
-            </ul>
+            </nav>
         </div>
     </header>
 </template>
@@ -113,94 +115,94 @@ export default {
     }
 }
 
-.header__menu {
-    display: none;
-    padding-right: 4px;
-}
-
-.burger-checkbox {
-    position: absolute;
+#menu__toggle {
+    opacity: 0;
     visibility: hidden;
 }
 
-.burger {
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-    display: block;
-    position: relative;
-    border: none;
-    background: transparent;
-    width: 40px;
-    height: 26px;
-}
-
-.burger::before,
-.burger::after {
-    content: '';
-    left: 0;
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 4px;
-    border-radius: 10px;
-    background: $colorWhite;
-}
-
-.burger::before {
-    top: 0;
-    box-shadow: 0 11px 0 $colorWhite;
-    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
-}
-
-.burger::after {
-    bottom: 0;
-    transition: bottom .3s .15s, transform .3s;
-}
-
-.burger-checkbox:checked+.burger::before {
-    top: 11px;
+#menu__toggle:checked+.menu__btn>span {
     transform: rotate(45deg);
-    box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
-    transition: box-shadow .15s, top .3s, transform .3s .15s;
 }
 
-.burger-checkbox:checked+.burger::after {
-    bottom: 11px;
-    transform: rotate(-45deg);
-    transition: bottom .3s, transform .3s .15s;
+#menu__toggle:checked+.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0deg);
 }
 
-.menu-list {
-    top: $heightHeader;
-    right: 0;
+#menu__toggle:checked+.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+    right: 0 !important;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.menu__btn {
+    display: flex;
+    align-items: center;
     position: absolute;
-    display: grid;
-    gap: 12px;
-    padding: 0 0 42px;
-    margin: 0;
-    background: $colorHeaderFooter;
-    list-style-type: none;
-    transform: translateX(100%);
-    transition: right .3s;
-    width: 200px;
+    top: 25px;
+    right: 20px;
+    transform: translate(-50%, 0);
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+
 }
 
-.menu-item {
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
     display: block;
-    padding: 8px;
-    color: white;
-    font-size: 18px;
-    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $colorWhite;
+    transition-duration: .25s;
+}
+
+.menu__btn>span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn>span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    margin: 0;
+    padding: $heightHeader 0;
+    list-style: none;
+    background-color: rgb(0 0 0 / 70%);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
     text-decoration: none;
+    transition-duration: .25s;
 }
 
-.menu-item:hover {
-    background: rgba(255, 255, 255, .2)
-}
-
-.burger-checkbox:checked~.menu-list {
-    transform: translateX(0);
+.menu__item:hover {
+    background-color: #CFD8DC;
 }
 
 .active {
@@ -213,7 +215,8 @@ export default {
         display: none;
     }
 
-    .header__menu {
+    .hamburger-menu {
         display: inline;
     }
-}</style>
+}
+</style>
