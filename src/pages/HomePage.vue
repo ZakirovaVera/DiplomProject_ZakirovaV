@@ -147,23 +147,30 @@ export default {
     background: $colorPromo;
     padding-top: 40px;
     padding-bottom: 40px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
 
     &__img {
-        width: 50%;
+        width: 450px;
         padding-left: 4px;
 
         & img {
-            width: 450px;
+            width: 100%;
             height: 100%;
             border-radius: 0px 80px 0px 80px;
         }
     }
 
     &__slogan {
-        padding-left: 64px;
+        // padding-left: 64px;
         display: flex;
         align-items: center;
         padding-right: 4px;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
     }
 
     &__info {
@@ -185,7 +192,7 @@ export default {
         text-indent: 25px;
         font-style: normal;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 30px;
         line-height: 38px;
         color: $colorFont;
         padding-bottom: 16px;
@@ -290,5 +297,33 @@ export default {
             text-align: justify;
         }
     }
+}
+
+@media (max-width: 1024px) {
+    .promo{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .promo__title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .promo__text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .promo__img{
+       width: 300px;
+    }
+    .promo__btn{
+        padding: 10px 20px;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    
 }
 </style>
