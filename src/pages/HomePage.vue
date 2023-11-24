@@ -301,8 +301,8 @@ export default {
 
 @media (max-width: 1024px) {
     .promo{
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     .promo__title {
         font-size: 30px;
