@@ -63,4 +63,29 @@ export default {
         font-weight: 700;
     }
 }
+
+@media (max-width: 1024px) {
+    .product {
+        &__title {
+            font-size: 20px;
+        }
+
+        &__text {
+            display: none;
+        }
+
+        &__img {
+            height: 400px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .product__img {
+        height: 300px;
+    }
+    .product__title{
+        text-align: center;
+    }
+}
 </style>

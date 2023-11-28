@@ -163,5 +163,12 @@ export default {
 @media (max-width: 767px) {
     .footer {
         grid-template-columns: repeat(auto-fill, 350px);
+        padding-top: 40px;
+        padding-bottom: 60px;
+
+        &__text {
+            font-size: 18px;
+        }
     }
-}</style>
+}
+</style>

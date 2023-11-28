@@ -247,9 +247,11 @@ export default {
 
 .product-popular-box {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 320px);
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 20px;
     justify-content: center;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .advantages {
@@ -300,30 +302,143 @@ export default {
 }
 
 @media (max-width: 1024px) {
-    .promo{
+    .promo {
         padding-top: 20px;
         padding-bottom: 20px;
-    }
-    .promo__title {
-        font-size: 30px;
-        line-height: 36px;
+
+        &__title {
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        &__text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        &__img {
+            width: 300px;
+        }
+
+        &__btn {
+            padding: 10px 20px;
+            margin-top: 0px;
+        }
     }
 
-    .promo__text {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 30px;
+    .products-popular {
+        padding-top: 30px;
+        padding-bottom: 60px;
     }
-    .promo__img{
-       width: 300px;
+
+    .products__heading {
+        font-size: 30px;
+        line-height: 36px;
+        padding-bottom: 24px;
     }
-    .promo__btn{
-        padding: 10px 20px;
-        margin-top: 0px;
+
+    .product-popular-box {
+        grid-template-columns: repeat(auto-fill, 240px);
+        gap: 4px;
+    }
+
+    .advantages {
+        padding-top: 20px;
+        padding-bottom: 40px;
+
+        &__heading {
+            font-size: 30px;
+            padding-bottom: 16px;
+        }
+
+        &__item_title {
+            font-size: 24px;
+            padding-bottom: 12px;
+        }
+
+        &__item_text {
+            font-size: 18px;
+        }
+    }
+
+    .swiperReviews {
+        padding-bottom: 40px;
+
+        &__title {
+            font-size: 30px;
+            padding-top: 20px;
+            line-height: 30px;
+        }
+
+    }
+
+    .swiper {
+        height: 570px;
+
+        &-slide {
+            height: 500px;
+        }
     }
 }
 
 @media (max-width: 767px) {
-    
-}
-</style>
+    .promo__img {
+        display: none;
+    }
+
+    .promo__slogan {
+        width: 100%;
+        padding-left: 4px;
+    }
+
+    .promo__title {
+        text-align: center;
+        min-height: 40px;
+    }
+
+    .product {
+        width: 300px;
+    }
+
+    .products-popular {
+        padding-bottom: 16px;
+    }
+
+    .product-popular-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .advantages {
+        &__item-wrap {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__heading {
+            font-size: 30px;
+            padding-bottom: 10px;
+        }
+
+        &__item_title {
+            font-size: 20px;
+            padding-bottom: 10px;
+            line-height: 30px;
+        }
+
+        &__item_text {
+            font-size: 16px;
+        }
+    }
+
+    .swiper {
+        height: 370px;
+
+        &-slide {
+            height: 300px;
+        }
+    }
+}</style>
