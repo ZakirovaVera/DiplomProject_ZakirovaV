@@ -339,7 +339,7 @@ export default {
     }
 
     .product-popular-box {
-        grid-template-columns: repeat(auto-fill, 240px);
+        grid-template-columns: repeat(auto-fit, 240px);
         gap: 4px;
     }
 
