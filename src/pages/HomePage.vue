@@ -79,7 +79,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 export default {
-    name: "PromoComponent",
+    name: "HomePage",
     components: {
         ProductComponent,
         Swiper,

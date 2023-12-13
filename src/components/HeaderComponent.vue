@@ -6,7 +6,7 @@
                 <h2 class="header__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
         </div>
-        <nav class="header__right ">
+        <nav class="header__right">
             <router-link class="header__right__a" :class="{ active: item.title == active }" @click="clickNav(item.title)"
                 :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title }}</router-link>
         </nav>

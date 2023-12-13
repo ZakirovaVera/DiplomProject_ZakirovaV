@@ -46,7 +46,13 @@ a {
 }
 
 html:root {
-  --swiper-theme-color: #ff839b;
-  --swiper-pagination-fraction-color: #ff839b;
+  --swiper-theme-color: $colorSite;
+  --swiper-pagination-fraction-color: $colorSite;
+}
+
+@media (max-width: 767px) {
+  .swiperReviews .swiper-pagination {
+    display: none;
+  }
 }
 </style>
