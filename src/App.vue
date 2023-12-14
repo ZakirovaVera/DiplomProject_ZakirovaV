@@ -46,8 +46,8 @@ a {
 }
 
 html:root {
-  --swiper-theme-color: $colorSite;
-  --swiper-pagination-fraction-color: $colorSite;
+  --swiper-theme-color: #ff839b;
+  --swiper-pagination-fraction-color: #ff839b;
 }
 
 @media (max-width: 767px) {
