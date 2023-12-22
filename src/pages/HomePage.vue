@@ -110,7 +110,7 @@ export default {
     &__title {
         text-align: center;
         color: $colorSite;
-        font-size: 50px;
+        font-size: 38px;
         font-style: normal;
         font-weight: 700;
         line-height: 62.5px;
@@ -182,7 +182,7 @@ export default {
     &__title {
         font-style: normal;
         font-weight: 700;
-        font-size: 48px;
+        font-size: 32px;
         line-height: 58px;
         color: $colorTextBlack;
         padding-bottom: 28px;
@@ -192,7 +192,7 @@ export default {
         text-indent: 25px;
         font-style: normal;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 24px;
         line-height: 38px;
         color: $colorFont;
         padding-bottom: 16px;
@@ -237,7 +237,7 @@ export default {
 .products__heading {
     color: $colorSite;
     text-align: center;
-    font-size: 50px;
+    font-size: 38px;
     font-style: normal;
     font-weight: 700;
     line-height: 62.5px;
@@ -262,7 +262,7 @@ export default {
     &__heading {
         text-align: center;
         color: $colorSite;
-        font-size: 50px;
+        font-size: 38px;
         font-style: normal;
         font-weight: 700;
         line-height: 62.5px;
@@ -281,7 +281,7 @@ export default {
         &_title {
             color: $colorFont;
             text-align: center;
-            font-size: 40px;
+            font-size: 28px;
             font-style: normal;
             font-weight: 400;
             line-height: 62.5px;
@@ -291,7 +291,7 @@ export default {
 
         &_text {
             color: $colorFont;
-            font-size: 22px;
+            font-size: 20px;
             font-style: normal;
             font-weight: 400;
             line-height: 33px;

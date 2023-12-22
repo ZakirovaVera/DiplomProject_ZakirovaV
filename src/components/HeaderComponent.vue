@@ -79,7 +79,7 @@ export default {
 
             &-text {
                 color: $colorSite;
-                font-size: 40px;
+                font-size:36px;
                 font-weight: 400;
                 line-height: 50px;
                 word-wrap: break-word;
@@ -99,7 +99,7 @@ export default {
             color: $colorWhite;
             text-align: center;
             font-family: Jost;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 25px;
             font-style: normal;
             font-weight: 400;

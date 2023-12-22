@@ -34,7 +34,7 @@ export default {
 
     &__title {
         color: $colorTextBlack;
-        font-size: 25px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 700;
         line-height: 31.25px;
@@ -48,7 +48,7 @@ export default {
 
     &__text {
         color: $colorFont;
-        font-size: 22px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 33px;
