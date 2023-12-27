@@ -47,7 +47,7 @@ export default {
 
     &__subtitle {
         color: $colorFont;
-        font-size: 35px;
+        font-size: 30px;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;

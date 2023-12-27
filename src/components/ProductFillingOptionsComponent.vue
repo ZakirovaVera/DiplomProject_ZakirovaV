@@ -32,7 +32,7 @@ export default {
         padding: 8px 10px;
         border: 2px solid $colorSite;
         color: $colorFont;
-        font-size: 22px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 33px;
@@ -62,7 +62,7 @@ export default {
 
     & p {
         color: $colorFont;
-        font-size: 22px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 33px;

@@ -134,7 +134,7 @@ export default {
     &__heading {
         font-style: normal;
         font-weight: 700;
-        font-size: 48px;
+        font-size: 36px;
         line-height: 58px;
         color: $colorTextBlack;
         padding-bottom: 28px;
@@ -144,7 +144,7 @@ export default {
         text-indent: 25px;
         font-style: normal;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 24px;
         line-height: 38px;
         color: $colorFont;
         padding-bottom: 16px;
@@ -176,7 +176,7 @@ export default {
     &__heading {
         color: $colorFont;
         text-align: center;
-        font-size: 40px;
+        font-size: 34px;
         font-style: normal;
         font-weight: 400;
         line-height: 62.5px;
@@ -188,7 +188,7 @@ export default {
         text-indent: 25px;
         font-style: normal;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 24px;
         line-height: 38px;
         color: $colorFont;
         padding-bottom: 16px;

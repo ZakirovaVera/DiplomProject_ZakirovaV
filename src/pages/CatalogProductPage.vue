@@ -240,7 +240,7 @@ export default {
     &__title {
         font-style: normal;
         font-weight: 700;
-        font-size: 48px;
+        font-size: 36px;
         line-height: 58px;
         color: $colorTextBlack;
         text-align: center;
@@ -259,7 +259,7 @@ export default {
     &__subtitle {
         font-style: normal;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 26px;
         line-height: 38px;
         color: $colorTextBlack;
         text-align: justify;
@@ -277,7 +277,7 @@ export default {
 
     &__text {
         color: #4D5053;
-        font-size: 22px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 33px;
@@ -308,7 +308,7 @@ export default {
         margin-right: 20px;
         cursor: pointer;
         color: #4D5053;
-        font-size: 24px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 33px;
