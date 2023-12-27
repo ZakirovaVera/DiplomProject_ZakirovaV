@@ -7,8 +7,8 @@
             </router-link>
         </div>
         <nav class="header__right">
-            <router-link class="header__right__a" :class="{ active: item.title == active }" @click="clickNav(item.title)"
-                :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title }}</router-link>
+            <router-link class="header__right__a" :class="{ active: item.title == active }" @click="clickNav(item.title)"  :to="item.url" v-for="item in menulinks" :key="item.id">{{
+                    item.title }}</router-link>
         </nav>
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
@@ -31,7 +31,7 @@ export default {
     name: "HeaderComponent",
     data() {
         return {
-            active: '',
+            active: 'Главная',
         }
     },
     computed: {
@@ -42,8 +42,8 @@ export default {
             this.active = string;
         },
         clickLog() {
-            this.active = '';
-        }
+            this.active = 'Главная';
+        },
     },
 }
 </script>
