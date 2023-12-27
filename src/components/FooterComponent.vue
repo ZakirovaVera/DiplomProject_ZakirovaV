@@ -63,7 +63,7 @@ export default {
 
             &-text {
                 color: $colorSite;
-                font-size: 40px;
+                font-size:36px;
                 font-weight: 400;
                 line-height: 50px;
                 word-wrap: break-word;
@@ -100,7 +100,7 @@ export default {
                 gap: 10px;
                 color: #222;
                 text-align: center;
-                font-size: 18px;
+                font-size: 16px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 125%;
@@ -116,7 +116,7 @@ export default {
 
     &__heading {
         color: $colorSite;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 400;
         line-height: 31.25px;
         word-wrap: break-word;
@@ -130,7 +130,7 @@ export default {
 
     &__text {
         color: $colorWhite;
-        font-size: 22px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 33px;
@@ -165,9 +165,11 @@ export default {
         grid-template-columns: repeat(auto-fill, 350px);
         padding-top: 40px;
         padding-bottom: 60px;
-
+        &__heading{
+            font-size: 16px;
+        }
         &__text {
-            font-size: 18px;
+            font-size: 14px;
         }
     }
 }
