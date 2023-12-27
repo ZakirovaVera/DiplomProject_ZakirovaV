@@ -79,7 +79,7 @@ export default {
 
             &-text {
                 color: $colorSite;
-                font-size:36px;
+                font-size: 36px;
                 font-weight: 400;
                 line-height: 50px;
                 word-wrap: break-word;
@@ -217,6 +217,16 @@ export default {
 
     .hamburger-menu {
         display: inline;
+    }
+
+    .menu__item {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header__left_logo-text {
+        font-size: 30px;
     }
 }
 </style>

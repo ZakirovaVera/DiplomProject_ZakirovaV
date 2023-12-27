@@ -63,7 +63,7 @@ export default {
 
             &-text {
                 color: $colorSite;
-                font-size:36px;
+                font-size: 36px;
                 font-weight: 400;
                 line-height: 50px;
                 word-wrap: break-word;
@@ -165,12 +165,17 @@ export default {
         grid-template-columns: repeat(auto-fill, 350px);
         padding-top: 40px;
         padding-bottom: 60px;
-        &__heading{
+
+        &__heading {
             font-size: 16px;
         }
+
         &__text {
             font-size: 14px;
         }
+
+        &__left_logo-text {
+            font-size: 30px;
+        }
     }
-}
-</style>
+}</style>

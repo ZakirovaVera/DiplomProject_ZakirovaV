@@ -34,7 +34,7 @@ export default {
 
     &__title {
         color: $colorTextBlack;
-        font-size: 24px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 700;
         line-height: 31.25px;
@@ -67,7 +67,7 @@ export default {
 @media (max-width: 1024px) {
     .product {
         &__title {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         &__text {
@@ -86,6 +86,8 @@ export default {
     }
     .product__title{
         text-align: center;
+        font-size: 16px;
+        min-height: 40px;
     }
 }
 </style>

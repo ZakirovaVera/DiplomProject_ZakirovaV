@@ -394,8 +394,12 @@ export default {
 
     .promo__title {
         text-align: center;
+        font-size: 24px;
         min-height: 40px;
+        padding-bottom: 16px;
     }
+    .promo__text {
+    font-size: 18px;}
 
     .product {
         width: 300px;
@@ -412,14 +416,16 @@ export default {
         align-items: center;
         flex-direction: column;
     }
-
+    .products__heading {
+    font-size: 24px;
+}
     .advantages {
         &__item-wrap {
             grid-template-columns: repeat(1, 1fr);
         }
 
         &__heading {
-            font-size: 30px;
+            font-size: 24px;
             padding-bottom: 10px;
         }
 
@@ -441,4 +447,7 @@ export default {
             height: 300px;
         }
     }
+    .swiperReviews__title {
+    font-size: 24px;
+}
 }</style>
