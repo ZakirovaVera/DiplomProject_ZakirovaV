@@ -7,7 +7,8 @@
             </router-link>
         </div>
         <nav class="header__right">
-            <router-link class="header__right__a" :class="{ active: item.title == active }" @click="clickNav(item.title)"  :to="item.url" v-for="item in menulinks" :key="item.id">{{
+            <router-link class="header__right__a" :class="{ active: item.mnemocode == currentMnemocodeMenuLink }" @click="clickNav(item)"
+                :to="item.url" v-for="item in menulinks" :key="item.id">{{
                     item.title }}</router-link>
         </nav>
         <div class="hamburger-menu">
@@ -16,8 +17,8 @@
                 <span></span>
             </label>
             <nav class="menu__box">
-                <router-link class="header__right__a menu__item" :class="{ active: item.title == active }"
-                    @click="clickNav(item.title)" :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title
+                <router-link class="header__right__a menu__item" :class="{ active: item.mnemocode == currentMnemocodeMenuLink }"
+                    @click="clickNav(item)" :to="item.url" v-for="item in menulinks" :key="item.id">{{ item.title
                     }}</router-link>
             </nav>
         </div>
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
     name: "HeaderComponent",
@@ -35,15 +36,16 @@ export default {
         }
     },
     computed: {
-        ...mapState(['infoLogo', 'menulinks']),
+        ...mapState(['infoLogo', 'menulinks', 'currentMnemocodeMenuLink']),
     },
     methods: {
-        clickNav(string) {
-            this.active = string;
+        clickNav(menuItem) {
+            this.SET_CURRENT_MNEMOCODE_MENU_LINK(menuItem.mnemocode);
         },
         clickLog() {
-            this.active = 'Главная';
+            this.SET_CURRENT_MNEMOCODE_MENU_LINK('home');
         },
+        ...mapMutations(['SET_CURRENT_MNEMOCODE_MENU_LINK'])
     },
 }
 </script>
