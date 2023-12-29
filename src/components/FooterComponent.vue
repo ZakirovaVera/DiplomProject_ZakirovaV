@@ -1,7 +1,7 @@
 <template>
     <footer class="footer center">
         <div class="footer__left">
-            <router-link class="footer__left_logo" to="/">
+            <router-link class="footer__left_logo" to="/" @click="SET_CURRENT_MNEMOCODE_MENU_LINK('home')">
                 <img :src="infoLogo.logotype" alt="ikon_logo" height="55">
                 <h2 class="footer__left_logo-text">{{ infoLogo.nameFirma }}</h2>
             </router-link>
@@ -29,12 +29,15 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
     name: 'FooterComponent',
     computed: {
         ...mapState(['infoLogo'])
+    },
+    methods: {
+        ...mapMutations(['SET_CURRENT_MNEMOCODE_MENU_LINK'])
     },
 }
 </script>

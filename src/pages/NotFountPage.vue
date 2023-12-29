@@ -3,7 +3,7 @@
         <div class="notfount__content">
             <h1 class="notfount__title">404</h1>
             <h2 class="notfount__subtitle">Страница на стадии разработки</h2>
-            <router-link class="notfount__btn" to="./"><span>Вернуться на главную</span>
+            <router-link class="notfount__btn" to="./" @click="SET_CURRENT_MNEMOCODE_MENU_LINK('home')"><span>Вернуться на главную</span>
                 <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.85938 8.43542L15.5826 8.29857M10.4776 1.91138L17.0005 8.43436L10.3461 15.0887"
                         stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
@@ -16,8 +16,12 @@
 </template>
 
 <script>
-export default {
+import { mapMutations } from 'vuex';
 
+export default {
+    methods: {
+        ...mapMutations(['SET_CURRENT_MNEMOCODE_MENU_LINK'])
+    },
 }
 </script>
 

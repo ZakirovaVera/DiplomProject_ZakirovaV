@@ -12,7 +12,7 @@
                     Индивидуальные торты, для семейного вечера, дня рождения, свадьбы и других событий.
                 </p>
                 <p class="promo__text">Ваш кондитер, {{ infoLogo.confectionersName }}.</p>
-                <router-link class="promo__btn" to="/about" >Обо мне
+                <router-link class="promo__btn" to="/about" @click="SET_CURRENT_MNEMOCODE_MENU_LINK('about')" >Обо мне
                     <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.85938 8.43542L15.5826 8.29857M10.4776 1.91138L17.0005 8.43436L10.3461 15.0887"
                             stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
@@ -67,7 +67,7 @@
 
 <script>
 import ProductComponent from '@/components/ProductComponent.vue';
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -87,12 +87,15 @@ export default {
     },
     computed: {
         ...mapState(['infoLogo', 'promoPhoto', 'listFillings', 'reviewsSwiper']),
-        ...mapGetters(['getTop3'])
+        ...mapGetters(['getTop3'])        
     },
     setup() {
         return {
             modules: [Pagination],
         };
+    },
+    methods: {
+        ...mapMutations(['SET_CURRENT_MNEMOCODE_MENU_LINK'])
     },
 }
 </script>
