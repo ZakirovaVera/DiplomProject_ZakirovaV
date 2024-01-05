@@ -167,7 +167,8 @@ export default {
     .footer {
         grid-template-columns: repeat(auto-fill, 350px);
         padding-top: 40px;
-        padding-bottom: 60px;
+        padding-bottom: 40px;
+        gap: 20px;
 
         &__heading {
             font-size: 16px;
@@ -179,6 +180,9 @@ export default {
 
         &__left_logo-text {
             font-size: 30px;
+        }
+        &__center{
+            gap: 16px;
         }
     }
 }</style>
