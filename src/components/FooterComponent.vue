@@ -146,14 +146,30 @@ export default {
     .footer {
         grid-template-columns: repeat(1, 500px);
         justify-content: center;
-        gap: 50px;
+        gap: 40px;
         text-align: center;
+
+        &__heading {
+            font-size: 18px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__center {
+            gap: 16px;
+        }
 
         &__left {
             padding-left: 0;
 
             &_logo {
                 justify-content: center;
+
+                &-text {
+                    font-size: 30px;
+                }
             }
         }
 
@@ -178,11 +194,13 @@ export default {
             font-size: 14px;
         }
 
-        &__left_logo-text {
-            font-size: 30px;
-        }
-        &__center{
+        // &__left_logo-text {
+        //     font-size: 26px;
+        // }
+
+        &__center {
             gap: 16px;
         }
     }
-}</style>
+}
+</style>
