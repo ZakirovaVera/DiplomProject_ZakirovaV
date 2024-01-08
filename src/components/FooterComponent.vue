@@ -199,7 +199,7 @@ export default {
         // }
 
         &__center {
-            gap: 16px;
+            gap: 10px;
         }
     }
 }
