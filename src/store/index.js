@@ -74,7 +74,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/description-raspberries_mango.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: null,
+        price: 1700,
         popularity: 8,
       },
       {
@@ -82,7 +82,7 @@ export default createStore({
         tag: 'Начинки',
         img: require('@/assets/img/chocolate_mango_passion_fruit.jpg'),
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta repellat ipsa dolores nesciunt magni. Veritatis libero minus ex ducimus hic.',
-        price: null,
+        price: 1700,
         popularity: 9,
       },
       {

@@ -32,7 +32,7 @@
             </div>
 
             <div class="product-text__btn-conteiner">
-                <ProductFillingOptionsComponent v-for="filOpt in fillingOptions" :key="index" :filOpt="filOpt"
+                <ProductFillingOptionsComponent v-for="filOpt in fillingOptions" :key="filOpt.id" :filOpt="filOpt"
                     :isActive="isActive" />
             </div>
         </div>

@@ -59,7 +59,7 @@
             <swiper :slidesPerView="3" :spaceBetween="30" :pagination="{
                 clickable: true,
             }" :modules="modules" class="mySwiper">
-                <swiper-slide v-for="item in reviewsSwiper" :key="index"><img :src="item" alt="отзывы"></swiper-slide>
+                <swiper-slide v-for="item in reviewsSwiper" :key="item.id"><img :src="item" alt="отзывы"></swiper-slide>
             </swiper>
         </div>
     </div>

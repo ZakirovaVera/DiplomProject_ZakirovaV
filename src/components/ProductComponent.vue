@@ -3,7 +3,8 @@
         <img class="product__img" :src="fil.img">
         <a class="product__title" href="/catalog">{{ fil.name }}</a>
         <div>
-            <p class="product__text product__text-price">{{ fil.price }} руб/кг</p>
+            <p v-if="fil.price!==null" class="product__text product__text-price">{{ fil.price }} руб/кг</p>
+            <p v-else class="product__text product__text-price">Цену уточнить</p>
             <p class="product__text">{{ fil.description }}</p>
         </div>
     </div>
